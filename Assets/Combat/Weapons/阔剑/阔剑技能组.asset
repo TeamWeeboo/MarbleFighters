@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a023c1b28bf474cb75a03de4b71b98, type: 3}
+  m_Name: "\u9614\u5251\u6280\u80FD\u7EC4"
+  m_EditorClassIdentifier: 
+  moves:
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    previewObject: {fileID: 0}
+    moveDuration: 30
+    maxResetSpeed: 10
+    maxInitialSpeed: 20
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    previewObject: {fileID: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    previewObject: {fileID: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    previewObject: {fileID: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    previewObject: {fileID: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    previewObject: {fileID: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+  animations: {fileID: 22100000, guid: 66f4ebf23d8cb034686b43981f70b6db, type: 2}
