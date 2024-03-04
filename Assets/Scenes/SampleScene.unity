@@ -264,3 +264,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cee57379df835db47b70b2645547444d, type: 3}
+--- !u!1 &8416688685365064622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8416688686708452234, guid: cee57379df835db47b70b2645547444d, type: 3}
+  m_PrefabInstance: {fileID: 8416688685365064621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8416688685365064623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8416688685289713940, guid: cee57379df835db47b70b2645547444d, type: 3}
+  m_PrefabInstance: {fileID: 8416688685365064621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8416688685365064624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416688685365064622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e367765d868ee40bbefecbdbb88e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damaging: 0
+  acceleration: 0
+  damageRange: {x: 0, y: 0}
+  relativeKnockback: {x: 0, y: 0}
+--- !u!114 &8416688685365064625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416688685365064622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e217b46e48daf44fb3f89c9eed7dff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &8416688685365064626
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416688685365064622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8416688685365064627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416688685365064623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4ea0340610d1842b19b4f782f731ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageRange: {x: 0, y: 0}
+  damageType: 0
+  relativeKnockback: {x: 0, y: 0}
+  velocity: {x: 0, y: 0}
