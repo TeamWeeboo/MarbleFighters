@@ -63,6 +63,8 @@ namespace Combat {
 			damageDealer.enabled=anim_damaging;
 			damageDealer.damageRange=currentMove.damageRange;
 			damageDealer.damageType=currentMove.damageType;
+			damageDealer.relativeKnockback=currentMove.relativeKnockback;
+			damageDealer.direction=currentDirection;
 		}
 		void UpdateRigidBody() {
 			if(currentMove==null) return;

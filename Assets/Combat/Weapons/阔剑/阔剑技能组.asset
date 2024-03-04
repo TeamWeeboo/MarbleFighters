@@ -15,7 +15,7 @@ MonoBehaviour:
   moves:
   - damageRange: {x: 0, y: 0}
     damageType: 0
-    relativeKnockback: {x: 0, y: 0}
+    relativeKnockback: {x: 40, y: -10}
     previewObject: {fileID: 0}
     moveDuration: 30
     maxResetSpeed: 10

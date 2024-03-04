@@ -9,7 +9,7 @@ namespace Combat {
 		public Vector2Int damageRange;
 		public DamageType damageType;
 		public Vector2 relativeKnockback;
-		public Vector2 velocity;
+		public Angle direction;
 
 		void Start() {
 			collider=GetComponent<Collider2D>();
@@ -19,15 +19,16 @@ namespace Combat {
 				if(collision.transform==t) return;
 			if(!collision.GetComponent<DamageTarget>()) return;
 
+			DamageModel damage = GetDamage();
 			DamageTarget target = collision.GetComponent<DamageTarget>();
-
+			target.Damage(damage);
 		}
 
 		public DamageModel GetDamage() {
 			DamageModel result = new DamageModel();
 			result.damageRange=damageRange;
 			result.damageType=damageType;
-			result.knockback=Utility.Product(relativeKnockback,velocity);
+			result.knockback=Utility.Product(relativeKnockback,direction.vector);
 			return result;
 		}
 	}

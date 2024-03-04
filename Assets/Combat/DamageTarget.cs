@@ -4,14 +4,20 @@ using UnityEngine;
 
 namespace Combat {
 	public class DamageTarget:MonoBehaviour {
-		// Start is called before the first frame update
-		void Start() {
 
+		public int hpMax;
+		public int hp;
+		new Rigidbody2D rigidbody;
+
+		private void Start() {
+			hp=hpMax;
+			rigidbody=GetComponentInParent<Rigidbody2D>();
 		}
 
-		// Update is called once per frame
-		void Update() {
-
+		public void Damage(DamageModel damage) {
+			hp-=Random.Range(damage.damageRange.x,damage.damageRange.y+1);
+			rigidbody.AddForce(damage.knockback,ForceMode2D.Impulse);
 		}
+
 	}
 }

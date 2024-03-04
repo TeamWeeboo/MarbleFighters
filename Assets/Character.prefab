@@ -43,7 +43,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.7515356, y: -0.0054956675}
@@ -74,7 +74,6 @@ MonoBehaviour:
   damageRange: {x: 0, y: 0}
   damageType: 0
   relativeKnockback: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
 --- !u!1 &8416688685390360684
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e217b46e48daf44fb3f89c9eed7dff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpMax: 0
+  hp: 0
 --- !u!50 &8416688685365064629
 Rigidbody2D:
   serializedVersion: 4
