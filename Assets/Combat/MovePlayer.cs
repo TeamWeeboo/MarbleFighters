@@ -17,8 +17,10 @@ namespace Combat {
 
 		MoveSetInfo currentMoveSet;
 		MoveInfo currentMove;
-		int tickAfterMove;
+		public int tickAfterMove;
 		Angle currentDirection;
+
+		public bool isMoving => currentMove!=null&&tickAfterMove<=currentMove.moveDuration;
 
 		void Start() {
 			animator=GetComponent<Animator>();

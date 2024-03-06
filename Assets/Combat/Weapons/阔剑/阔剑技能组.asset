@@ -13,46 +13,58 @@ MonoBehaviour:
   m_Name: "\u9614\u5251\u6280\u80FD\u7EC4"
   m_EditorClassIdentifier: 
   moves:
-  - damageRange: {x: 0, y: 0}
+  - damageRange: {x: 2, y: 2}
     damageType: 0
-    relativeKnockback: {x: 40, y: -10}
-    previewObject: {fileID: 0}
+    relativeKnockback: {x: 5, y: -10}
     moveDuration: 30
-    maxResetSpeed: 10
+    maxResetSpeed: 2
     maxInitialSpeed: 20
+    previewObject: {fileID: 0}
+    moveName: Slash
+    moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
     damageType: 0
     relativeKnockback: {x: 0, y: 0}
-    previewObject: {fileID: 0}
     moveDuration: 0
     maxResetSpeed: 0
     maxInitialSpeed: 0
+    previewObject: {fileID: 0}
+    moveName: 
+    moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
     damageType: 0
     relativeKnockback: {x: 0, y: 0}
-    previewObject: {fileID: 0}
     moveDuration: 0
     maxResetSpeed: 0
     maxInitialSpeed: 0
+    previewObject: {fileID: 0}
+    moveName: 
+    moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
     damageType: 0
     relativeKnockback: {x: 0, y: 0}
-    previewObject: {fileID: 0}
     moveDuration: 0
     maxResetSpeed: 0
     maxInitialSpeed: 0
+    previewObject: {fileID: 0}
+    moveName: 
+    moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
     damageType: 0
     relativeKnockback: {x: 0, y: 0}
+    moveDuration: 15
+    maxResetSpeed: 2
+    maxInitialSpeed: 100
     previewObject: {fileID: 0}
-    moveDuration: 0
-    maxResetSpeed: 0
-    maxInitialSpeed: 0
+    moveName: Run
+    moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
     damageType: 0
     relativeKnockback: {x: 0, y: 0}
+    moveDuration: 15
+    maxResetSpeed: 20
+    maxInitialSpeed: 100
     previewObject: {fileID: 0}
-    moveDuration: 0
-    maxResetSpeed: 0
-    maxInitialSpeed: 0
+    moveName: Halt
+    moveIcon: {fileID: 0}
   animations: {fileID: 22100000, guid: 66f4ebf23d8cb034686b43981f70b6db, type: 2}
