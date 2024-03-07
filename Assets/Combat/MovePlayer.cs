@@ -12,8 +12,8 @@ namespace Combat {
 
 		[SerializeField] Transform weaponRoot;
 
-		[SerializeField] bool anim_damaging;
-		[SerializeField] float anim_acceleration;
+		public bool anim_damaging;
+		public float anim_acceleration;
 
 		MoveSetInfo currentMoveSet;
 		MoveInfo currentMove;
@@ -23,6 +23,9 @@ namespace Combat {
 		public bool isMoving => currentMove!=null&&tickAfterMove<=currentMove.moveDuration;
 
 		void Start() {
+			GetComponentReferences();
+		}
+		public void GetComponentReferences() {
 			animator=GetComponent<Animator>();
 			damageDealer=GetComponentInChildren<DamageDealer>();
 			rigidbody=GetComponent<Rigidbody2D>();
