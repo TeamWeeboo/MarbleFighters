@@ -19,7 +19,7 @@ MonoBehaviour:
     moveDuration: 30
     maxResetSpeed: 2
     maxInitialSpeed: 20
-    previewObject: {fileID: 0}
+    previewObject: {fileID: 6039786684758497834, guid: eef94892a3625504b99c4135846c91a4, type: 3}
     moveName: Slash
     moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
