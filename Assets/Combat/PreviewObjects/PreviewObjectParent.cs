@@ -30,6 +30,9 @@ namespace Combat {
 							}
 
 							GameObject newPreviewObject = Instantiate(prefab,character.transform.position,command.moveDirection.quaternion,transform);
+							foreach(var element in newPreviewObject.GetComponentsInChildren<PreviewObjectElementController>()) {
+								element.velocityVector=character.rigidbody.velocity;
+							}
 							if(previewObjects.ContainsKey(i)) {
 								previewObjects[i]=(prefab, newPreviewObject);
 							} else {
