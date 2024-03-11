@@ -23,6 +23,8 @@ namespace Combat {
 			movePlayer.StartMove(moveSet,targetIndex,Angle.right);
 		}
 		void FixedUpdate() {
+			Color newColor = Color.HSVToRGB(timeSinceStart-Mathf.Floor(timeSinceStart),1,1);
+			newColor.a=0.25f;
 
 			if(movePlayer.isMoving) {
 				timeSinceStart+=Time.deltaTime;
@@ -30,12 +32,14 @@ namespace Combat {
 				if(tickSinceStart%4==0) {
 					GameObject dot = Instantiate(dotObject,movePlayer.transform.position,Quaternion.identity,transform);
 					dot.GetComponent<PreviewObjectElementController>().thisTime=timeSinceStart;
+					dot.GetComponent<SpriteRenderer>().color=newColor;
 				}
 
 				if(movePlayer.anim_damaging) {
 					SpriteRenderer spr = Instantiate(dotObject,weaponObject.position,weaponObject.rotation,transform).GetComponent<SpriteRenderer>();
 					spr.transform.localScale=weaponObject.localScale;
 					spr.sprite=weaponObject.GetComponent<SpriteRenderer>().sprite;
+					spr.color=newColor;
 					spr.GetComponent<PreviewObjectElementController>().thisTime=timeSinceStart;
 				}
 			} else {

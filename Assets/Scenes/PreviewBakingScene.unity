@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
-  targetIndex: 2
+  targetIndex: 1
   characterPrefab: {fileID: 8416688686708452234, guid: cee57379df835db47b70b2645547444d, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
 --- !u!1 &227137275
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
-  targetIndex: 2
+  targetIndex: 0
   characterPrefab: {fileID: 8416688686708452234, guid: cee57379df835db47b70b2645547444d, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
 --- !u!4 &227137277
@@ -659,6 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickPerRound: 15
+  traditionalTurnBased: 0
   playerCharacters:
   - {fileID: 8416688685365064625}
   - {fileID: 817714666}
@@ -667,6 +668,54 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3578322511020991033, guid: 5e68e651d8d892a4aad126f8f530e594, type: 3}
   m_PrefabInstance: {fileID: 3578322510516035458}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &590978044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 590978046}
+  - component: {fileID: 590978045}
+  m_Layer: 0
+  m_Name: PreviewBaker (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &590978045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590978044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3392c6604f85f64a8f4bbc70392dba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
+  targetIndex: 2
+  characterPrefab: {fileID: 8416688686708452234, guid: cee57379df835db47b70b2645547444d, type: 3}
+  dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
+--- !u!4 &590978046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590978044}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.013, y: -3.261, z: -0.24899098}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &817714665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2242,4 +2291,5 @@ SceneRoots:
   - {fileID: 1295528999}
   - {fileID: 227137277}
   - {fileID: 169671576}
+  - {fileID: 590978046}
   - {fileID: 45440154}
