@@ -233,6 +233,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3578322511020991033, guid: 5e68e651d8d892a4aad126f8f530e594, type: 3}
   m_PrefabInstance: {fileID: 248476570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &353637480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353637482}
+  - component: {fileID: 353637481}
+  m_Layer: 0
+  m_Name: PreviewParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &353637481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353637480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414ad7ae3fc150d409e632cd84113942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &353637482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353637480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443780487
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickPerRound: 15
+  traditionalTurnBased: 1
   playerCharacters:
   - {fileID: 8416688685365064625}
   - {fileID: 817714666}
@@ -2013,10 +2058,6 @@ PrefabInstance:
       propertyPath: anim_acceleration
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8416688685365064626, guid: cee57379df835db47b70b2645547444d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 66f4ebf23d8cb034686b43981f70b6db, type: 2}
     - target: {fileID: 8416688686708452228, guid: cee57379df835db47b70b2645547444d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2100,3 +2141,4 @@ SceneRoots:
   - {fileID: 8416688685365064621}
   - {fileID: 817714665}
   - {fileID: 1295528999}
+  - {fileID: 353637482}

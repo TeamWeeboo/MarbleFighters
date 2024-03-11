@@ -22,23 +22,14 @@ MonoBehaviour:
     previewObject: {fileID: 6039786684758497834, guid: eef94892a3625504b99c4135846c91a4, type: 3}
     moveName: Slash
     moveIcon: {fileID: 0}
-  - damageRange: {x: 4, y: 4}
-    damageType: 1
-    relativeKnockback: {x: 5, y: 0}
-    moveDuration: 30
-    maxResetSpeed: 2
-    maxInitialSpeed: 60
-    previewObject: {fileID: 8992788085570722219, guid: cf7fed21057817a4ca2d9665f182e1c8, type: 3}
-    moveName: Thrust
-    moveIcon: {fileID: 0}
-  - damageRange: {x: 1, y: 1}
-    damageType: 2
-    relativeKnockback: {x: 1, y: 0}
-    moveDuration: 30
-    maxResetSpeed: 2
-    maxInitialSpeed: 20
-    previewObject: {fileID: 0}
-    moveName: Pommel Strike
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+    previewObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
+    moveName: 
     moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
     damageType: 0
@@ -46,7 +37,16 @@ MonoBehaviour:
     moveDuration: 0
     maxResetSpeed: 0
     maxInitialSpeed: 0
-    previewObject: {fileID: 0}
+    previewObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
+    moveName: 
+    moveIcon: {fileID: 0}
+  - damageRange: {x: 0, y: 0}
+    damageType: 0
+    relativeKnockback: {x: 0, y: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+    previewObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
     moveName: 
     moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
     moveDuration: 15
     maxResetSpeed: 2
     maxInitialSpeed: 100
-    previewObject: {fileID: 0}
+    previewObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
     moveName: Run
     moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
     moveDuration: 15
     maxResetSpeed: 20
     maxInitialSpeed: 100
-    previewObject: {fileID: 0}
+    previewObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
     moveName: Halt
     moveIcon: {fileID: 0}
   animations: {fileID: 22100000, guid: 66f4ebf23d8cb034686b43981f70b6db, type: 2}
