@@ -433,10 +433,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5615919172876152084, guid: cee57379df835db47b70b2645547444d, type: 3}
-      propertyPath: moveSet
-      value: 
-      objectReference: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
     - target: {fileID: 8416688686708452228, guid: cee57379df835db47b70b2645547444d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.06
@@ -476,18 +472,6 @@ PrefabInstance:
     - target: {fileID: 8416688686708452228, guid: cee57379df835db47b70b2645547444d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8416688686708452229, guid: cee57379df835db47b70b2645547444d, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8416688686708452229, guid: cee57379df835db47b70b2645547444d, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8416688686708452229, guid: cee57379df835db47b70b2645547444d, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9725827
       objectReference: {fileID: 0}
     - target: {fileID: 8416688686708452234, guid: cee57379df835db47b70b2645547444d, type: 3}
       propertyPath: m_Name
@@ -643,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickPerRound: 60
-  traditionalTurnBased: 0
+  traditionalTurnBased: 1
   playerCharacters:
   - {fileID: 8416688685365064625}
   - {fileID: 1955287302}

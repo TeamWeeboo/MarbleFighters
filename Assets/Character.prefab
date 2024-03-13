@@ -463,7 +463,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4688692, g: 1, b: 0.3160377, a: 1}
+  m_Color: {r: 0.9725827, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -519,6 +519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponRoot: {fileID: 8416688685657574399}
+  baseFrictionStrength: 0.25
+  anim_frictionStrength: 0
   anim_damaging: 0
   anim_acceleration: 0
   tickAfterMove: 0

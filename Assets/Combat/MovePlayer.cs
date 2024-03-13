@@ -11,6 +11,8 @@ namespace Combat {
 		new Rigidbody2D rigidbody;
 
 		[SerializeField] Transform weaponRoot;
+		[SerializeField] float baseFrictionStrength;
+		[SerializeField] float anim_frictionStrength;
 
 		public bool anim_damaging;
 		public float anim_acceleration;
@@ -33,6 +35,7 @@ namespace Combat {
 
 		private void FixedUpdate() {
 			UpdateMove();
+			UpdateFriction();
 		}
 
 		public void StartMove(MoveSetInfo moveset,int moveIndex,Angle direction) {
@@ -76,6 +79,11 @@ namespace Combat {
 			rigidbody.AddForce(currentDirection.vector*anim_acceleration);
 		}
 
+		void UpdateFriction() {
+			float speedChange = rigidbody.velocity.magnitude*0.01f+0.1f;
+			speedChange*=baseFrictionStrength*(isMoving ? anim_frictionStrength : 1);
+			rigidbody.velocity=Vector2.MoveTowards(rigidbody.velocity,Vector2.zero,speedChange);
+		}
 
 	}
 
