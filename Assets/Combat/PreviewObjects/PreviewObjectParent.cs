@@ -10,6 +10,15 @@ namespace Combat {
 
 			if(CommandPanelController.instance.isActiveAndEnabled) {
 				for(int i = 0;i<CommandPanelController.instance.playerCharacters.Count;i++) {
+
+					if(!CommandPanelController.instance.playerCharacters[i]){
+						if(previewObjects.ContainsKey(i)&&previewObjects[i].Item2){
+							Destroy(previewObjects[i].Item2);
+							previewObjects.Remove(i);
+						}
+						continue;
+					}
+
 					CommandModel command = CommandPanelController.instance.currentCommandSet.moves[i];
 					int moveIndex = command.moveIndex;
 					Character character = CommandPanelController.instance.playerCharacters[i];

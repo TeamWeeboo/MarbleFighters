@@ -67,4 +67,4 @@ MonoBehaviour:
     previewObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
     moveName: Halt
     moveIcon: {fileID: 0}
-  animations: {fileID: 22100000, guid: 66f4ebf23d8cb034686b43981f70b6db, type: 2}
+  animations: {fileID: 22100000, guid: a356a6f6be871b84a864fdd3d9d1bc08, type: 2}
