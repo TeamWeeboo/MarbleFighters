@@ -4,19 +4,20 @@ using UnityEngine;
 
 namespace Combat {
 	public class DamageTarget:MonoBehaviour {
-
-		public int hpMax;
-		public int hp;
 		new Rigidbody2D rigidbody;
 
+		public delegate void DamageMethod(DamageModel damage);
+		public DamageMethod damaging;
+
 		private void Start() {
-			hp=hpMax;
 			rigidbody=GetComponentInParent<Rigidbody2D>();
 		}
 
-		public void Damage(DamageModel damage) {
-			hp-=Random.Range(damage.damageRange.x,damage.damageRange.y+1);
-			rigidbody.AddForce(damage.knockback,ForceMode2D.Impulse);
+		public bool damageSuccess;
+		public bool Damage(DamageModel damage) {
+			damageSuccess=false;
+			damaging?.Invoke(damage);
+			return damageSuccess;
 		}
 
 	}
