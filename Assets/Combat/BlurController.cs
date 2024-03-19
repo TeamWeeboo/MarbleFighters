@@ -33,6 +33,7 @@ namespace Combat {
 				newGo=Instantiate(gameObject);
 				Component[] componentList = newGo.GetComponentsInChildren<Component>();
 				foreach(var i in componentList) {
+					if(!i) continue;
 					if(i is SpriteRenderer) {
 						SpriteRenderer spriteRenderer = (SpriteRenderer)i;
 						Color c = spriteRenderer.color;
@@ -40,6 +41,8 @@ namespace Combat {
 						spriteRenderer.color=c;
 					} else if(i is SortingGroup) {
 						(i as SortingGroup).sortingOrder-=10;
+					} else if(i is Canvas) {
+						Destroy(i.gameObject);
 					} else if(i is Transform) {
 					} else Destroy(i);
 				}
