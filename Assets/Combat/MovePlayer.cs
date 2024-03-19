@@ -80,7 +80,7 @@ namespace Combat {
 		}
 
 		void UpdateFriction() {
-			float speedChange = rigidbody.velocity.magnitude*0.01f+0.1f;
+			float speedChange = rigidbody.velocity.magnitude*0.1f+0.1f;
 			speedChange*=baseFrictionStrength*(isMoving ? anim_frictionStrength : 1);
 			rigidbody.velocity=Vector2.MoveTowards(rigidbody.velocity,Vector2.zero,speedChange);
 		}

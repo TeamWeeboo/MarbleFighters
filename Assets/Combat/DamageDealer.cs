@@ -22,7 +22,8 @@ namespace Combat {
 			lastDamageTimes.Clear();
 		}
 
-		private void OnTriggerEnter2D(Collider2D collision) {
+		private void OnTriggerStay2D(Collider2D collision) {
+			if(!this.isActiveAndEnabled)return;
 			for(var t = transform;t!=null;t=t.parent)
 				if(collision.transform==t) return;
 			DamageTarget target = collision.GetComponent<DamageTarget>();
