@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class QuadSpriteSetter:MonoBehaviour {
 
 	public Sprite targetSprite;
@@ -12,10 +13,11 @@ public class QuadSpriteSetter:MonoBehaviour {
 	private void Update() {
 		Debug.Log(material.mainTexture);
 		material.mainTexture=targetSprite.texture;
-		material.SetVector("min",targetSprite.textureRect.min);
-		material.SetVector("max",targetSprite.textureRect.max);
-		material.SetVector("pivot",targetSprite.pivot);
-		material.SetFloat("ppu",targetSprite.pixelsPerUnit);
+		material.SetVector("_min",targetSprite.textureRect.min);
+		material.SetVector("_max",targetSprite.textureRect.max);
+		material.SetVector("_fullSize",new Vector2(targetSprite.texture.width,targetSprite.texture.height));
+		material.SetVector("_pivot",targetSprite.pivot);
+		material.SetFloat("_ppu",targetSprite.pixelsPerUnit);
 	}
 
 
