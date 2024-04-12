@@ -11,7 +11,7 @@ public class QuadSpriteSetter:MonoBehaviour {
 		material=GetComponent<MeshRenderer>().material;
 	}
 	private void Update() {
-		Debug.Log(material.mainTexture);
+		if(!targetSprite) return;
 		material.mainTexture=targetSprite.texture;
 		material.SetVector("_min",targetSprite.textureRect.min);
 		material.SetVector("_max",targetSprite.textureRect.max);
