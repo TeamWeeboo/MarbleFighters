@@ -5,10 +5,14 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class QuadSpriteSetter:MonoBehaviour {
 
+	[SerializeField] Material baseMaterial;
+
 	public Sprite targetSprite;
 	Material material;
 	private void Start() {
-		material=GetComponent<MeshRenderer>().material;
+		MeshRenderer renderer = GetComponent<MeshRenderer>();
+		if(renderer.sharedMaterial!=baseMaterial) renderer.material=baseMaterial;
+		material=renderer.material;
 	}
 	private void Update() {
 		if(!targetSprite) return;

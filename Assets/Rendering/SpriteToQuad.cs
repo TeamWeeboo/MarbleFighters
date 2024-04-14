@@ -25,7 +25,7 @@ public class SpriteToQuad:MonoBehaviour {
 			DestroyImmediate(go.GetComponent<SpriteRenderer>());
 			go.AddComponent<MeshFilter>().mesh=quadMesh;
 			go.AddComponent<MeshRenderer>().material=quadMaterial;
-			go.GetComponent<MeshRenderer>().material.renderQueue=3000+order;
+			go.GetComponent<MeshRenderer>().sortingOrder=order;
 			go.AddComponent<QuadSpriteSetter>().targetSprite=sprite;
 		}
 		done=true;

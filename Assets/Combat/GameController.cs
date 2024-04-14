@@ -41,6 +41,7 @@ namespace Combat {
 		}
 
 		private void Start() {
+			UnityEngine.Rendering.GraphicsSettings.transparencySortMode=TransparencySortMode.Orthographic;
 			instance=this;
 		}
 
