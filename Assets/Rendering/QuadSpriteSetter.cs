@@ -6,6 +6,7 @@ using UnityEngine;
 public class QuadSpriteSetter:MonoBehaviour {
 
 	[SerializeField] Material baseMaterial;
+	[SerializeField] int sortingOrder;
 
 	public Sprite targetSprite;
 	Material material;
@@ -15,6 +16,11 @@ public class QuadSpriteSetter:MonoBehaviour {
 		material=renderer.material;
 	}
 	private void Update() {
+
+		if(sortingOrder>0) transform.localPosition+=new Vector3(0,0.001f,-0.001f);
+		if(sortingOrder<0) transform.localPosition-=new Vector3(0,0.001f,-0.001f);
+		sortingOrder=0;
+
 		if(!targetSprite) return;
 		material.mainTexture=targetSprite.texture;
 		material.SetVector("_min",targetSprite.textureRect.min);

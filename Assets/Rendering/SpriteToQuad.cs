@@ -20,12 +20,12 @@ public class SpriteToQuad:MonoBehaviour {
 			GameObject go = i.gameObject;
 			Sprite sprite = i.sprite;
 			int order = i.sortingOrder;
-			//go.transform.position+=new Vector3(0,0.1f,-0.1f)*i.sortingOrder; 
+			go.transform.position+=new Vector3(0,0.001f,-0.001f)*i.sortingOrder; 
 			DestroyImmediate(go.GetComponent<SpriteSkin>());
 			DestroyImmediate(go.GetComponent<SpriteRenderer>());
 			go.AddComponent<MeshFilter>().mesh=quadMesh;
 			go.AddComponent<MeshRenderer>().material=quadMaterial;
-			go.GetComponent<MeshRenderer>().sortingOrder=order;
+			go.GetComponent<MeshRenderer>().sortingOrder=0;
 			go.AddComponent<QuadSpriteSetter>().targetSprite=sprite;
 		}
 		done=true;

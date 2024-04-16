@@ -41,8 +41,9 @@ namespace Combat {
 		}
 
 		private void Start() {
-			UnityEngine.Rendering.GraphicsSettings.transparencySortMode=TransparencySortMode.Orthographic;
-			instance=this;
+			UnityEngine.Rendering.GraphicsSettings.transparencySortMode=TransparencySortMode.CustomAxis;
+			UnityEngine.Rendering.GraphicsSettings.transparencySortAxis=new Vector3(0,0,1);
+			instance =this;
 		}
 
 		private void FixedUpdate() {
