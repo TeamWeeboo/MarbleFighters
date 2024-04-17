@@ -38,7 +38,7 @@ namespace UI {
 		public CommandModel currentCommand => (characterIndex<0||characterIndex>=playerCharacters.Count) ? null : currentCommandSet.moves[characterIndex];
 
 		int characterToControl;
-		public void EnterCommandMode(List<Character> playerCharacters,int characterToControl=-1) {
+		public void EnterCommandMode(List<Character> playerCharacters,int characterToControl = -1) {
 			this.characterToControl=characterToControl;
 			this.playerCharacters=playerCharacters;
 			currentCommandSet=new CommandSetModel(playerCharacters.Count);
@@ -79,7 +79,8 @@ namespace UI {
 		}
 		public bool NextCharacter() {
 			if(currentCharacter!=null) {
-				currentCommand.moveDirection=new Angle(MainCameraController.instance.mouseWorldPosition-(Vector2)currentCharacter.transform.position);
+				currentCommand.moveDirection=
+				new Angle(MainCameraController.mouseWorldPosition-currentCharacter.transform.position);
 			}
 
 			while(true) {

@@ -14,7 +14,7 @@ namespace Combat {
 	public class DamageModel:ICloneable {
 		public DamageType damageType;
 		public Vector2Int damageRange;
-		public Vector2 knockback;
+		public Vector3 knockback;
 		public object Clone() {
 			DamageModel result = new DamageModel();
 			result.damageType=damageType;

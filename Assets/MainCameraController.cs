@@ -12,6 +12,13 @@ public class MainCameraController:MonoBehaviour {
 		camera.transparencySortMode=TransparencySortMode.CustomAxis;
 		camera.transparencySortAxis=new Vector3(0,0,1);
 	}
+	public static Vector3 mouseWorldPosition { get; private set; }
 
-	public Vector2 mouseWorldPosition => camera.ScreenToWorldPoint(Input.mousePosition);
+	private void Update() {
+		camera.transparencySortAxis=new Vector3(0,0,1);
+		RaycastHit hit;
+		Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),out hit,9999999,LayerMask.GetMask(new string[] { "Terrain" }));
+		mouseWorldPosition=hit.point;
+	}
+
 }

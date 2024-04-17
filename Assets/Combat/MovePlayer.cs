@@ -8,9 +8,10 @@ namespace Combat {
 
 		Animator animator;
 		DamageDealer damageDealer;
-		new Rigidbody2D rigidbody;
+		new Rigidbody rigidbody;
 
 		[SerializeField] Transform weaponRoot;
+		[SerializeField] Transform weaponPhysicsRoot;
 		[SerializeField] float baseFrictionStrength;
 		[SerializeField] float anim_frictionStrength;
 
@@ -30,7 +31,7 @@ namespace Combat {
 		public void GetComponentReferences() {
 			animator=GetComponent<Animator>();
 			damageDealer=GetComponentInChildren<DamageDealer>();
-			rigidbody=GetComponent<Rigidbody2D>();
+			rigidbody=GetComponent<Rigidbody>();
 		}
 
 		private void FixedUpdate() {
@@ -57,6 +58,7 @@ namespace Combat {
 			tickAfterMove++;
 			if(tickAfterMove>currentMove.moveDuration) currentMove=null;
 			weaponRoot.rotation=currentDirection.quaternion;
+			weaponPhysicsRoot.rotation=currentDirection.quaternion3;
 			UpdateDamageDealer();
 			UpdateRigidBody();
 		}
@@ -76,13 +78,13 @@ namespace Combat {
 		}
 		void UpdateRigidBody() {
 			if(currentMove==null) return;
-			rigidbody.AddForce(currentDirection.vector*anim_acceleration);
+			rigidbody.AddForce(currentDirection.vector3*anim_acceleration);
 		}
 
 		void UpdateFriction() {
 			float speedChange = rigidbody.velocity.magnitude*0.01f+0.1f;
 			speedChange*=baseFrictionStrength*(isMoving ? anim_frictionStrength : 1);
-			rigidbody.velocity=Vector2.MoveTowards(rigidbody.velocity,Vector2.zero,speedChange);
+			rigidbody.velocity=Vector3.MoveTowards(rigidbody.velocity,Vector3.zero,speedChange);
 		}
 
 	}

@@ -38,7 +38,7 @@ namespace Combat {
 								Destroy(previewObjects[i].Item2);
 							}
 
-							GameObject newPreviewObject = Instantiate(prefab,character.transform.position,command.moveDirection.quaternion,transform);
+							GameObject newPreviewObject = Instantiate(prefab,character.transform.position,command.moveDirection.quaternion3,transform);
 							foreach(var element in newPreviewObject.GetComponentsInChildren<PreviewObjectElementController>()) {
 								element.velocityVector=character.rigidbody.velocity;
 							}
@@ -48,7 +48,7 @@ namespace Combat {
 								previewObjects.Add(i,(prefab, newPreviewObject));
 							}
 						}
-						previewObjects[i].Item2.transform.rotation=command.moveDirection.quaternion;
+						previewObjects[i].Item2.transform.rotation=command.moveDirection.quaternion3;
 					}
 
 				}

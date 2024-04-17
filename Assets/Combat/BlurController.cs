@@ -33,13 +33,13 @@ namespace Combat {
 				newGo=Instantiate(gameObject);
 				Component[] componentList = newGo.GetComponentsInChildren<Component>();
 				foreach(var i in componentList) {
-					if(i is SpriteRenderer) {
-						SpriteRenderer spriteRenderer = (SpriteRenderer)i;
-						Color c = spriteRenderer.color;
+					if(i is MeshRenderer) {
+						if(!i.transform.parent.GetComponent<MeshRenderer>()) i.transform.localPosition+=new Vector3();
+
+						MeshRenderer renderer = (MeshRenderer)i;
+						Color c = renderer.material.color;
 						c.a*=0.25f;
-						spriteRenderer.color=c;
-					} else if(i is SortingGroup) {
-						(i as SortingGroup).sortingOrder-=10;
+						renderer.material.color=c;
 					} else if(i is Transform) {
 					} else Destroy(i);
 				}

@@ -7,16 +7,16 @@ namespace Combat {
 
 		public int hpMax;
 		public int hp;
-		new Rigidbody2D rigidbody;
+		new Rigidbody rigidbody;
 
 		private void Start() {
 			hp=hpMax;
-			rigidbody=GetComponentInParent<Rigidbody2D>();
+			rigidbody=GetComponentInParent<Rigidbody>();
 		}
 
 		public void Damage(DamageModel damage) {
 			hp-=Random.Range(damage.damageRange.x,damage.damageRange.y+1);
-			rigidbody.AddForce(damage.knockback,ForceMode2D.Impulse);
+			rigidbody.AddForce(damage.knockback,ForceMode.Impulse);
 		}
 
 	}

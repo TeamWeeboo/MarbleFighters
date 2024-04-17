@@ -5,10 +5,10 @@ namespace Combat {
 	public class Character:MonoBehaviour {
 
 		public MoveSetInfo moveSet;
-		[HideInInspector] new public Rigidbody2D rigidbody;
+		[HideInInspector] new public Rigidbody rigidbody;
 		public MovePlayer movePlayer { get; private set; }
 		void Start() {
-			rigidbody=GetComponent<Rigidbody2D>();
+			rigidbody=GetComponent<Rigidbody>();
 			movePlayer=GetComponent<MovePlayer>();
 		}
 		void Update() {

@@ -20,8 +20,16 @@ public struct Angle {
 		get { return Quaternion.Euler(0,0,degree); }
 		set { val=value.eulerAngles.z; }
 	}
+	public Quaternion quaternion3 {
+		get { return Quaternion.Euler(0,degree,0); }
+		set { val=value.eulerAngles.y; }
+	}
 	public Vector2 vector {
 		get { return new Vector2(cos,sin); }
+		set { this=new Angle(vector); }
+	}
+	public Vector3 vector3 {
+		get { return new Vector3(cos,0,sin); }
 		set { this=new Angle(vector); }
 	}
 	public int direction {
@@ -53,6 +61,11 @@ public struct Angle {
 		return result;
 	}
 
+	public Angle(Vector3 vector) {
+		Vector2 vector2 = new Vector2(vector.x,vector.z);
+		val=vector.y>0 ? Vector2.Angle(Vector2.right,vector2) : 360-Vector2.Angle(Vector2.right,vector2);
+		Update();
+	}
 	public Angle(Vector2 vector) {
 		val=vector.y>0 ? Vector2.Angle(Vector2.right,vector) : 360-Vector2.Angle(Vector2.right,vector);
 		Update();
