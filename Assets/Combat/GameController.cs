@@ -22,6 +22,7 @@ namespace Combat {
 		public static GameController instance;
 		[SerializeField] int tickPerRound;
 		[SerializeField] bool traditionalTurnBased;
+		[SerializeReference] bool noPause;
 		public List<Character> playerCharacters;
 
 		int tickPlayed = 9999;
@@ -34,7 +35,7 @@ namespace Combat {
 				if(_isPlaying) {
 					Time.timeScale=1;
 				} else {
-					Time.timeScale=0;
+					if(!noPause) Time.timeScale=0;
 					if(original) EnterCommandMode();
 				}
 			}
@@ -43,7 +44,7 @@ namespace Combat {
 		private void Start() {
 			UnityEngine.Rendering.GraphicsSettings.transparencySortMode=TransparencySortMode.CustomAxis;
 			UnityEngine.Rendering.GraphicsSettings.transparencySortAxis=new Vector3(0,0,1);
-			instance =this;
+			instance=this;
 		}
 
 		private void FixedUpdate() {

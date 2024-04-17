@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Combat {
 	public class DamageDealer:MonoBehaviour {
-		Collider2D collider;
+		Collider collider;
 
 		public Vector2Int damageRange;
 		public DamageType damageType;
@@ -12,9 +12,9 @@ namespace Combat {
 		public Angle direction;
 
 		void Start() {
-			collider=GetComponent<Collider2D>();
+			collider=GetComponent<Collider>();
 		}
-		private void OnTriggerEnter2D(Collider2D collision) {
+		private void OnTriggerEnter(Collider collision) {
 			for(var t = transform;t!=null;t=t.parent)
 				if(collision.transform==t) return;
 			if(!collision.GetComponent<DamageTarget>()) return;

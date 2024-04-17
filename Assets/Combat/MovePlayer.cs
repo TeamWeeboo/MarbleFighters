@@ -10,8 +10,7 @@ namespace Combat {
 		DamageDealer damageDealer;
 		new Rigidbody rigidbody;
 
-		[SerializeField] Transform weaponRoot;
-		[SerializeField] Transform weaponPhysicsRoot;
+		[field: SerializeField] public Transform weaponRoot { get; private set; }
 		[SerializeField] float baseFrictionStrength;
 		[SerializeField] float anim_frictionStrength;
 
@@ -58,7 +57,6 @@ namespace Combat {
 			tickAfterMove++;
 			if(tickAfterMove>currentMove.moveDuration) currentMove=null;
 			weaponRoot.rotation=currentDirection.quaternion;
-			weaponPhysicsRoot.rotation=currentDirection.quaternion3;
 			UpdateDamageDealer();
 			UpdateRigidBody();
 		}

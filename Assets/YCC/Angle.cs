@@ -63,7 +63,7 @@ public struct Angle {
 
 	public Angle(Vector3 vector) {
 		Vector2 vector2 = new Vector2(vector.x,vector.z);
-		val=vector.y>0 ? Vector2.Angle(Vector2.right,vector2) : 360-Vector2.Angle(Vector2.right,vector2);
+		val=vector2.y>0 ? Vector2.Angle(Vector2.right,vector2) : 360-Vector2.Angle(Vector2.right,vector2);
 		Update();
 	}
 	public Angle(Vector2 vector) {

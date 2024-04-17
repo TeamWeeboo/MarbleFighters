@@ -14,7 +14,7 @@ public class TestScript:MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.P))
 			toMove.StartMove(moveset,0,new Angle(20));
 		if(Input.GetMouseButtonDown(0)) {
-			toMove.StartMove(moveset,0,new Angle(MainCameraController.instance.mouseWorldPosition-(Vector2)toMove.transform.position));
+			toMove.StartMove(moveset,0,new Angle(MainCameraController.mouseWorldPosition-toMove.transform.position));
 		}
 	}
 }
