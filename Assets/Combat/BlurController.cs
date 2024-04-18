@@ -18,6 +18,10 @@ namespace Combat {
 
 		void FixedUpdate() {
 			tickPassed++;
+			foreach(var i in blurs) {
+				if(!i) continue;
+				i.SetActive(true);
+			}
 			if(tickPassed>=blurInterval) {
 				tickPassed=0;
 				NewBlur();
@@ -30,19 +34,21 @@ namespace Combat {
 				newGo=blurs[lastIndex];
 				blurs[lastIndex]=null;
 			} else {
-				newGo=Instantiate(gameObject);
+				newGo=Instantiate(gameObject,new Vector3(0,100000,0),Quaternion.identity);
+				newGo.SetActive(false);
 				Component[] componentList = newGo.GetComponentsInChildren<Component>();
 				foreach(var i in componentList) {
 					if(i is MeshRenderer) {
-						if(!i.transform.parent.GetComponent<MeshRenderer>()) i.transform.localPosition+=new Vector3();
+						if(i.transform.parent.GetComponent<BillBoardController>()) i.transform.localPosition+=new Vector3(0,0,0.01f);
 
 						MeshRenderer renderer = (MeshRenderer)i;
 						Color c = renderer.material.color;
 						c.a*=0.25f;
 						renderer.material.color=c;
-					} else if(i is Transform) {
+					} else if(i is Transform||i is BillBoardController||i is MeshFilter) {
 					} else Destroy(i);
 				}
+				newGo.transform.position=transform.position;
 			}
 
 

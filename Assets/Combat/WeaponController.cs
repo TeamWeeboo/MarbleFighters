@@ -10,11 +10,14 @@ public class WeaponController:MonoBehaviour {
 	void Start() {
 	}
 	void Update() {
-		Vector3 relativePosition = targetTransform.transform.position-targetRootTransform.position;
-		relativePosition.z=relativePosition.y;
-		relativePosition.y=0;
+
+		Vector3 relativePosition = targetRootTransform.InverseTransformPoint(targetTransform.position);// targetTransform.position;
+		//relativePosition.z=relativePosition.y;
+		//relativePosition.y=0;
+		Debug.Log(relativePosition);
 		transform.localPosition=relativePosition;
 		Angle weaponAngle = new Angle(targetTransform.rotation);
-		transform.rotation=weaponAngle.quaternion3;
+		//transform.rotation=weaponAngle.quaternion3;
+		transform.localRotation=targetTransform.rotation;
 	}
 }
