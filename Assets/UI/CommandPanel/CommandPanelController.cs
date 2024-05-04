@@ -27,7 +27,7 @@ namespace UI {
 			if(currentCharacter!=null) {
 				currentCommand.moveDirection=new Angle(MainCameraController.mouseWorldPosition-currentCharacter.transform.position);
 				//Debug.Log(currentCommand.moveDirection.degree);
-				currentCharacter.GetComponent<MovePlayer>().weaponRoot.rotation=currentCommand.moveDirection.quaternion;
+				currentCharacter.GetComponent<MovePlayer>().currentDirection=currentCommand.moveDirection;
 			}
 
 		}
