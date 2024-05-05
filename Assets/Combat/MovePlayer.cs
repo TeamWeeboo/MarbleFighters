@@ -20,7 +20,7 @@ namespace Combat {
 		MoveSetInfo currentMoveSet;
 		MoveInfo currentMove;
 		public int tickAfterMove;
-		Angle currentDirection;
+		public Angle currentDirection;
 
 		public bool isMoving => currentMove!=null&&tickAfterMove<=currentMove.moveDuration;
 
@@ -33,12 +33,23 @@ namespace Combat {
 			rigidbody=GetComponent<Rigidbody>();
 		}
 
+
+		private void Update() {
+			SetWeaponRootDirection(currentDirection);
+		}
+
 		private void FixedUpdate() {
 			UpdateMove();
 			UpdateFriction();
 		}
 
 		public void StartMove(MoveSetInfo moveset,int moveIndex,Angle direction) {
+
+			Transform cameraRoot = MainCameraController.instance.transform.root;
+			Vector3 cameraAngle = cameraRoot.root.rotation.eulerAngles;
+			cameraAngle.y=-direction.degree;
+			cameraRoot.rotation=Quaternion.Euler(cameraAngle);
+
 			currentMoveSet=moveset;
 			currentMove=currentMoveSet.moves[moveIndex];
 			currentDirection=direction;
@@ -56,10 +67,18 @@ namespace Combat {
 			if(currentMove==null) return;
 			tickAfterMove++;
 			if(tickAfterMove>currentMove.moveDuration) currentMove=null;
-			weaponRoot.rotation=currentDirection.quaternion;
+			SetWeaponRootDirection(currentDirection);
 			UpdateDamageDealer();
 			UpdateRigidBody();
 		}
+
+		public void SetWeaponRootDirection(Angle angle) {
+
+			Angle selfAngle = new Angle();
+			selfAngle.quaternion3=transform.rotation;
+			weaponRoot.localRotation=(angle+selfAngle).quaternion;
+		}
+
 		private void UpdateDamageDealer() {
 			if(!damageDealer) return;
 

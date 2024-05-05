@@ -15,6 +15,12 @@ public class MainCameraController:MonoBehaviour {
 	public static Vector3 mouseWorldPosition { get; private set; }
 
 	private void Update() {
+
+		if(Input.GetKey(KeyCode.LeftArrow))
+			transform.root.eulerAngles+=new Vector3(0,90*Time.unscaledDeltaTime,0);
+		if(Input.GetKey(KeyCode.RightArrow))
+			transform.root.eulerAngles+=new Vector3(0,-90*Time.unscaledDeltaTime,0);
+
 		camera.transparencySortAxis=new Vector3(transform.forward.x,0,transform.forward.z);
 		UnityEngine.Rendering.GraphicsSettings.transparencySortAxis=new Vector3(transform.forward.x,0,transform.forward.z);
 		RaycastHit hit;
