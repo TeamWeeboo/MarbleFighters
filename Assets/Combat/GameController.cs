@@ -21,6 +21,7 @@ namespace Combat {
 
 		public static GameController instance;
 		[SerializeField] int tickPerRound;
+		[SerializeField] bool traditionalTurnBased;
 		public List<Character> playerCharacters;
 
 		int tickPlayed = 9999;
@@ -51,8 +52,15 @@ namespace Combat {
 			}
 		}
 
+		int nextCharacter;
 		void EnterCommandMode() {
-			UI.CommandPanelController.instance.EnterCommandMode(playerCharacters);
+			if(traditionalTurnBased) {
+				UI.CommandPanelController.instance.EnterCommandMode(playerCharacters,nextCharacter);
+				for(int _ = 0;_<playerCharacters.Count;_++) {
+					nextCharacter=(nextCharacter+1)%playerCharacters.Count;
+					if(playerCharacters[nextCharacter]) break;
+				}
+			} else UI.CommandPanelController.instance.EnterCommandMode(playerCharacters);
 		}
 		public void SetCommand(CommandSetModel commands) {
 			for(int i = 0;i<playerCharacters.Count&&i<commands.moves.Length;i++) {

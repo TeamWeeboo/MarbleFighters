@@ -6,6 +6,10 @@ namespace Combat {
 	public class DamageDealer:MonoBehaviour {
 		Collider2D collider;
 
+		[SerializeField] float damageInterval;
+
+		Dictionary<DamageTarget,float> lastDamageTimes = new Dictionary<DamageTarget,float>();
+
 		public Vector2Int damageRange;
 		public DamageType damageType;
 		public Vector2 relativeKnockback;
@@ -14,13 +18,20 @@ namespace Combat {
 		void Start() {
 			collider=GetComponent<Collider2D>();
 		}
-		private void OnTriggerEnter2D(Collider2D collision) {
+		private void OnEnable() {
+			lastDamageTimes.Clear();
+		}
+
+		private void OnTriggerStay2D(Collider2D collision) {
+			if(!this.isActiveAndEnabled)return;
 			for(var t = transform;t!=null;t=t.parent)
 				if(collision.transform==t) return;
-			if(!collision.GetComponent<DamageTarget>()) return;
+			DamageTarget target = collision.GetComponent<DamageTarget>();
+			if(!target) return;
+			if(lastDamageTimes.ContainsKey(target)&&Time.time-lastDamageTimes[target]<damageInterval) return;
+			lastDamageTimes[target]=Time.time;
 
 			DamageModel damage = GetDamage();
-			DamageTarget target = collision.GetComponent<DamageTarget>();
 			target.Damage(damage);
 		}
 

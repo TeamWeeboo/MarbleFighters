@@ -24,16 +24,22 @@ namespace UI {
 			if(Input.GetMouseButtonDown(0)) NextCharacter();
 			if(Input.GetMouseButtonDown(1)) PreviousCharacter();
 
+			if(currentCharacter!=null) {
+				currentCommand.moveDirection=new Angle(MainCameraController.instance.mouseWorldPosition-(Vector2)currentCharacter.transform.position);
+			}
+
 		}
 
 		public List<Character> playerCharacters;
-		CommandSetModel currentCommandSet;
+		public CommandSetModel currentCommandSet;
 		Dictionary<Character,int> lastMoves = new Dictionary<Character,int>();
 		public int characterIndex { get; private set; }
 		public Character currentCharacter => (characterIndex<0||characterIndex>=playerCharacters.Count) ? null : playerCharacters[characterIndex];
 		public CommandModel currentCommand => (characterIndex<0||characterIndex>=playerCharacters.Count) ? null : currentCommandSet.moves[characterIndex];
 
-		public void EnterCommandMode(List<Character> playerCharacters) {
+		int characterToControl;
+		public void EnterCommandMode(List<Character> playerCharacters,int characterToControl=-1) {
+			this.characterToControl=characterToControl;
 			this.playerCharacters=playerCharacters;
 			currentCommandSet=new CommandSetModel(playerCharacters.Count);
 
@@ -57,6 +63,7 @@ namespace UI {
 
 		public bool HasMove(int characterIndex) {
 			Character target = playerCharacters[characterIndex];
+			if(characterIndex!=characterToControl&&characterToControl>=0) return false;
 			if(!target) return false;
 			return target.HasMove();
 		}
