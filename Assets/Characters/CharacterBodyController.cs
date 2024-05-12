@@ -35,6 +35,6 @@ public class CharacterBodyController:MonoBehaviour {
 		}
 
 	}
-	bool isFlipped=true;
+	bool isFlipped;
 	Vector3 Flip(Vector3 origin) => new Vector3(-origin.x,origin.y,origin.z);
 }

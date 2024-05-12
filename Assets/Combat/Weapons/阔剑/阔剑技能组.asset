@@ -19,7 +19,7 @@ MonoBehaviour:
     moveDuration: 60
     maxResetSpeed: 2
     maxInitialSpeed: 20
-    previewObject: {fileID: 7715718463882667502, guid: e6e7642b2960cc8428dd83596342e81d, type: 3}
+    previewObject: {fileID: 3621702344955754106, guid: e6e7642b2960cc8428dd83596342e81d, type: 3}
     moveName: Slash
     moveIcon: {fileID: 0}
   - damageRange: {x: 2, y: 2}
@@ -28,7 +28,7 @@ MonoBehaviour:
     moveDuration: 60
     maxResetSpeed: 2
     maxInitialSpeed: 60
-    previewObject: {fileID: 3154542093660784686, guid: 80f471ba6066831499f24b7c33828864, type: 3}
+    previewObject: {fileID: 1296042394190379768, guid: 80f471ba6066831499f24b7c33828864, type: 3}
     moveName: Thrash
     moveIcon: {fileID: 0}
   - damageRange: {x: 2, y: 2}
@@ -37,7 +37,7 @@ MonoBehaviour:
     moveDuration: 60
     maxResetSpeed: 2
     maxInitialSpeed: 30
-    previewObject: {fileID: 5400576872081185643, guid: 2f968cb2ae0e110439b93884b2981912, type: 3}
+    previewObject: {fileID: 7771653892914861580, guid: 2f968cb2ae0e110439b93884b2981912, type: 3}
     moveName: Pommel Strike
     moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
     moveDuration: 0
     maxResetSpeed: 0
     maxInitialSpeed: 0
-    previewObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
+    previewObject: {fileID: 7753435710265765572, guid: 790989ac6538eff4e9372b467a177595, type: 3}
     moveName: 
     moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
     moveDuration: 60
     maxResetSpeed: 2
     maxInitialSpeed: 100
-    previewObject: {fileID: 5686722051684944171, guid: 1801d999e8bdd494c9dae074cae1c5bb, type: 3}
+    previewObject: {fileID: 6828075686944563185, guid: 1801d999e8bdd494c9dae074cae1c5bb, type: 3}
     moveName: Run
     moveIcon: {fileID: 0}
   - damageRange: {x: 0, y: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
     moveDuration: 60
     maxResetSpeed: 20
     maxInitialSpeed: 100
-    previewObject: {fileID: 1443905378622644744, guid: 90610c007ca61314881f5d82601e175c, type: 3}
+    previewObject: {fileID: 5213173288307628577, guid: 90610c007ca61314881f5d82601e175c, type: 3}
     moveName: Halt
     moveIcon: {fileID: 0}
   animations: {fileID: 22100000, guid: 66f4ebf23d8cb034686b43981f70b6db, type: 2}
