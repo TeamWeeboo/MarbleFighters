@@ -13,8 +13,7 @@ public class WeaponController:MonoBehaviour {
 
 		Vector3 relativePosition = targetRootTransform.InverseTransformPoint(targetTransform.position);// targetTransform.position;
 		//relativePosition.z=relativePosition.y;
-		//relativePosition.y=0;
-		Debug.Log(relativePosition);
+		//relativePosition.y=0;b
 		transform.localPosition=relativePosition;
 		Angle weaponAngle = new Angle(targetTransform.rotation);
 		//transform.rotation=weaponAngle.quaternion3;

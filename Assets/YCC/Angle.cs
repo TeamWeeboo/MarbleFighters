@@ -105,18 +105,7 @@ public struct Angle {
 		while(deg<deg1) deg+=360;
 		return deg<=deg2;
 	}
-	public void Clamp(Angle a,Angle b) {
-		float deg1 = a.degree;
-		float deg2 = b.degree;
-		while(deg1<0) deg1+=360;
-		while(deg2<0) deg2+=360;
-
-		Angle middle = (Angle)((deg1+deg2)*0.5f+180);
-		Debug.Log($"{IfBetween(middle,a)} {IfBetween(b,middle)} {middle.degree}");
-		if(IfBetween(middle,a)) degree=a.degree;
-		if(IfBetween(b,middle)) degree=b.degree;
-	}
-
+	public bool IfBetween(float a,float b) => IfBetween(new Angle(a),new Angle(b));
 	public static Vector2 operator *(Vector2 a,Angle b) {
 		return Utility.Product(a,b.vector);
 	}

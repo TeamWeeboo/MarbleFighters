@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterSpriteSetter:MonoBehaviour {
 
-	[SerializeField] CharacterSpriteData data;
+	public CharacterSpriteData data;
 
 	[ContextMenuItem("±£¥Ê","SaveSprites")]
 	[ContextMenuItem("∂¡»°","LoadSprites")]
@@ -49,5 +49,9 @@ public class CharacterSpriteSetter:MonoBehaviour {
 			if(t==root.transform) return result;
 		}
 		return 0;
+	}
+	public void LoadSpritesFromData(CharacterSpriteData data) {
+		this.data=data;
+		LoadSprites();
 	}
 }

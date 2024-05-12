@@ -45,11 +45,6 @@ namespace Combat {
 
 		public void StartMove(MoveSetInfo moveset,int moveIndex,Angle direction) {
 
-			Transform cameraRoot = MainCameraController.instance.transform.root;
-			Vector3 cameraAngle = cameraRoot.root.rotation.eulerAngles;
-			cameraAngle.y=-direction.degree;
-			cameraRoot.rotation=Quaternion.Euler(cameraAngle);
-
 			currentMoveSet=moveset;
 			currentMove=currentMoveSet.moves[moveIndex];
 			currentDirection=direction;
@@ -71,6 +66,8 @@ namespace Combat {
 			UpdateDamageDealer();
 			UpdateRigidBody();
 		}
+
+
 
 		public void SetWeaponRootDirection(Angle angle) {
 
