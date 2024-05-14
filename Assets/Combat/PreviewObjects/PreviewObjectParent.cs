@@ -48,7 +48,7 @@ namespace Combat {
 								previewObjects.Add(i,(prefab, newPreviewObject));
 							}
 						}
-						previewObjects[i].Item2.transform.rotation=command.moveDirection.quaternion3;
+						previewObjects[i].Item2.transform.rotation=(-command.moveDirection).quaternion3;
 					}
 
 				}
