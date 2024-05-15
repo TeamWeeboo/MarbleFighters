@@ -24,6 +24,7 @@ public class QuadSpriteSetter:MonoBehaviour {
 		sortingOrder=0;
 		*/
 
+
 		if(!targetSprite) return;
 		material.mainTexture=targetSprite.texture;
 		material.SetVector("_min",targetSprite.textureRect.min);
