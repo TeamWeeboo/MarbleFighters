@@ -37,12 +37,16 @@ public class QuadSpriteSetter:MonoBehaviour {
 
 	public void UpdateSortingOrder() {
 		int baseDepth = 0;
+		bool isRoot = true;
 		for(Transform t = transform.parent;t;t=t.parent) {
 			if(t.GetComponent<QuadSpriteSetter>()) {
 				baseDepth=t.GetComponent<QuadSpriteSetter>().sortingOrder;
+				isRoot=false;
 				break;
 			}
 		}
+		if(isRoot) return;
+
 		int relativeDepth = sortingOrder-baseDepth;
 		int currentDepth = Mathf.RoundToInt(-transform.localPosition.z/0.001f);
 		relativeDepth-=currentDepth;
