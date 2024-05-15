@@ -7,5 +7,6 @@ public class CharacterSpriteData:ScriptableObject {
 
 	public int[] relations;
 	public Sprite[] sprites;
-
+	public Vector3[] positions;
+	public int[] depths;
 }

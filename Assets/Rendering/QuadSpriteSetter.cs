@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [ExecuteInEditMode]
 public class QuadSpriteSetter:MonoBehaviour {
 
 	[SerializeField] Material baseMaterial;
-	[SerializeField] int sortingOrder;
+	public int sortingOrder;
 
 	public Sprite targetSprite;
 	Material material;
@@ -17,9 +18,12 @@ public class QuadSpriteSetter:MonoBehaviour {
 	}
 	private void Update() {
 
+		/*
 		if(sortingOrder>0) transform.localPosition+=new Vector3(0,0.001f,-0.001f);
 		if(sortingOrder<0) transform.localPosition-=new Vector3(0,0.001f,-0.001f);
 		sortingOrder=0;
+		*/
+
 
 		if(!targetSprite) return;
 		material.mainTexture=targetSprite.texture;
@@ -28,7 +32,22 @@ public class QuadSpriteSetter:MonoBehaviour {
 		material.SetVector("_fullSize",new Vector2(targetSprite.texture.width,targetSprite.texture.height));
 		material.SetVector("_pivot",targetSprite.pivot);
 		material.SetFloat("_ppu",targetSprite.pixelsPerUnit);
+		UpdateSortingOrder();
 	}
 
+	public void UpdateSortingOrder() {
+		int baseDepth = 0;
+		for(Transform t = transform.parent;t;t=t.parent) {
+			if(t.GetComponent<QuadSpriteSetter>()) {
+				baseDepth=t.GetComponent<QuadSpriteSetter>().sortingOrder;
+				break;
+			}
+		}
+		int relativeDepth = sortingOrder-baseDepth;
+		int currentDepth = Mathf.RoundToInt(-transform.localPosition.z/0.001f);
+		relativeDepth-=currentDepth;
+		transform.localPosition+=relativeDepth*new Vector3(0,0.001f,-0.001f);
+
+	}
 
 }
