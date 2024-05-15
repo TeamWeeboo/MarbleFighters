@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: "\u5730\u9762"
+    uniqueID: 932733341
+    locked: 0
+  - name: "\u5730\u9762\u7269\u54C1"
+    uniqueID: 4151672325
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
