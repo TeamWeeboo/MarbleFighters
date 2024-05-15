@@ -14,7 +14,7 @@ public class SpriteToQuad:MonoBehaviour {
 	public bool _button_;
 	private void Start() { if(!done) Work(); }
 	public void Work() {
-		gameObject.transform.localScale=new Vector3(1,Mathf.Sqrt(2),1);
+		//gameObject.transform.localScale=new Vector3(1,Mathf.Sqrt(2),1);
 		SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
 		foreach(var i in sprites) {
 			GameObject go = i.gameObject;
