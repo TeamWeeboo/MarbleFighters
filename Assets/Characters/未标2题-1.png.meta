@@ -186,7 +186,7 @@ TextureImporter:
         width: 697
         height: 646
       alignment: 9
-      pivot: {x: 0.51557064, y: 0.51674765}
+      pivot: {x: 0.6360541, y: 0.55796564}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
         width: 700
         height: 714
       alignment: 9
-      pivot: {x: 0.5995916, y: 0.14812942}
+      pivot: {x: 0.66104037, y: 0.11083728}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_5"
+      name: "\u5DE6\u624B"
       rect:
         serializedVersion: 2
         x: 610
@@ -262,7 +262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_6"
+      name: "\u5DE6\u5C0F\u81C2"
       rect:
         serializedVersion: 2
         x: 826
@@ -270,7 +270,7 @@ TextureImporter:
         width: 172
         height: 159
       alignment: 9
-      pivot: {x: 0.7818685, y: 0.8963949}
+      pivot: {x: 0.80568606, y: 0.8191041}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,7 +283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_7"
+      name: "\u53F3\u624B\u81C2"
       rect:
         serializedVersion: 2
         x: 1111
@@ -291,7 +291,7 @@ TextureImporter:
         width: 175
         height: 212
       alignment: 9
-      pivot: {x: 0.10125488, y: 0.4942987}
+      pivot: {x: 0.101256974, y: 0.47497588}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_8"
+      name: "\u53F3\u624B"
       rect:
         serializedVersion: 2
         x: 1374
@@ -312,7 +312,7 @@ TextureImporter:
         width: 130
         height: 118
       alignment: 9
-      pivot: {x: 0.1383066, y: 0.4218362}
+      pivot: {x: 0.13831036, y: 0.45655176}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,7 +346,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_10"
+      name: "\u5DE6\u5C0F\u817F"
       rect:
         serializedVersion: 2
         x: 843
@@ -354,7 +354,7 @@ TextureImporter:
         width: 137
         height: 247
       alignment: 9
-      pivot: {x: 0.8309135, y: 0.91297156}
+      pivot: {x: 0.8226122, y: 0.86241835}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_11"
+      name: "\u5DE6\u5927\u817F"
       rect:
         serializedVersion: 2
         x: 1123
@@ -375,7 +375,7 @@ TextureImporter:
         width: 163
         height: 310
       alignment: 9
-      pivot: {x: 0.68322676, y: 0.914449}
+      pivot: {x: 0.7805236, y: 0.8734477}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,7 +388,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_12"
+      name: "\u53F3\u5927\u817F"
       rect:
         serializedVersion: 2
         x: 1431
@@ -396,7 +396,7 @@ TextureImporter:
         width: 146
         height: 313
       alignment: 9
-      pivot: {x: 0.21337055, y: 0.8898013}
+      pivot: {x: 0.6498413, y: 0.84935725}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -409,7 +409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u672A\u68072\u9898-1_13"
+      name: "\u53F3\u5C0F\u817F"
       rect:
         serializedVersion: 2
         x: 1796
@@ -417,7 +417,7 @@ TextureImporter:
         width: 90
         height: 237
       alignment: 9
-      pivot: {x: 0.5251885, y: 0.94952524}
+      pivot: {x: 0.52519125, y: 0.8717453}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -440,19 +440,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      "\u53F3\u5927\u817F": 1305350341
+      "\u53F3\u5C0F\u817F": -229178222
+      "\u53F3\u624B": 201751651
+      "\u53F3\u624B\u81C2": -492067853
+      "\u5DE6\u5927\u817F": 352431876
+      "\u5DE6\u5C0F\u817F": -1996313961
+      "\u5DE6\u5C0F\u81C2": -863521931
+      "\u5DE6\u624B": -709691254
       "\u672A\u68072\u9898-1_0": 1344962986
       "\u672A\u68072\u9898-1_1": 1247098223
-      "\u672A\u68072\u9898-1_10": -1996313961
-      "\u672A\u68072\u9898-1_11": 352431876
-      "\u672A\u68072\u9898-1_12": 1305350341
-      "\u672A\u68072\u9898-1_13": -229178222
       "\u672A\u68072\u9898-1_2": -1847945701
       "\u672A\u68072\u9898-1_3": -403833559
       "\u672A\u68072\u9898-1_4": -170553366
-      "\u672A\u68072\u9898-1_5": -709691254
-      "\u672A\u68072\u9898-1_6": -863521931
-      "\u672A\u68072\u9898-1_7": -492067853
-      "\u672A\u68072\u9898-1_8": 201751651
       "\u672A\u68072\u9898-1_9": -406149838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

@@ -222,7 +222,7 @@ ScriptedImporter:
     spritePosition: {x: 1678, y: 1186}
   - name: "\u670D\u88C5\u4E0A\u534A\u8EAB"
     originalName: 
-    pivot: {x: 0.41796225, y: 0.17665164}
+    pivot: {x: 0.41503426, y: 0.090065695}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -327,12 +327,12 @@ ScriptedImporter:
     spritePosition: {x: 1787, y: 77}
   - name: "\u53F3\u5927\u817F"
     originalName: 
-    pivot: {x: 0.7028373, y: 0.8830762}
+    pivot: {x: 0.60530394, y: 0.9420648}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1033
+      x: 1037
       y: 3312
       width: 294
       height: 625
