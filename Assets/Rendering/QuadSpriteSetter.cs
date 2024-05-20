@@ -31,7 +31,11 @@ public class QuadSpriteSetter:MonoBehaviour {
 			material=renderer.material;
 		}
 		*/
-		if(!targetSprite) return;
+		if(!targetSprite) {
+			material.SetVector("_min",Vector2.zero);
+			material.SetVector("_max",Vector2.zero);
+			return;
+		}
 		material.mainTexture=targetSprite.texture;
 		material.SetVector("_min",targetSprite.textureRect.min);
 		material.SetVector("_max",targetSprite.textureRect.max);
