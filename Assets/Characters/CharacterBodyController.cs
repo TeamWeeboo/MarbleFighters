@@ -23,7 +23,7 @@ public class CharacterBodyController:MonoBehaviour {
 		Angle selfAngle = new Angle();
 		selfAngle.quaternion3=transform.rotation;
 		direction+=selfAngle;
-		Debug.Log(direction.degree);
+		//Debug.Log(direction.degree);
 		if(direction.IfBetween(0,180)) spriteSetter.LoadSpritesFromData(spriteBack);
 		else spriteSetter.LoadSpritesFromData(spriteFront);
 

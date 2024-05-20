@@ -55,10 +55,10 @@ public class CharacterSpriteSetter:MonoBehaviour {
 	public int GetRelation(GameObject root,GameObject leaf) {
 		int result = 0;
 		for(Transform t = leaf.transform;t!=null;t=t.parent) {
+			if(t==root.transform) return result;
 			result++;
 			result*=1009;
 			result+=Animator.StringToHash(t.name);
-			if(t==root.transform) return result;
 		}
 		return 0;
 	}
