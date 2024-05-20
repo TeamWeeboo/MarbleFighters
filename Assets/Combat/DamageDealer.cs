@@ -39,7 +39,7 @@ namespace Combat {
 			DamageModel result = new DamageModel();
 			result.damageRange=damageRange;
 			result.damageType=damageType;
-			result.knockback=Utility.Product(relativeKnockback,direction.vector3);
+			result.knockback=Utility.Product(relativeKnockback,direction.vector);
 			return result;
 		}
 	}

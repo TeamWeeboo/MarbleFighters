@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class CharacterSpriteSetter:MonoBehaviour {
 
 	public CharacterSpriteData data;
@@ -30,7 +34,7 @@ public class CharacterSpriteSetter:MonoBehaviour {
 			int relation = GetRelation(gameObject,sprite.gameObject);
 			if(dataDictionary.ContainsKey(relation)) {
 				sprite.targetSprite=dataDictionary[relation];
-				sprite.transform.localPosition=positionDictionary[relation];
+				//sprite.transform.localPosition=positionDictionary[relation];
 				sprite.sortingOrder=depthDictionary[relation];
 			}
 		}
@@ -51,6 +55,13 @@ public class CharacterSpriteSetter:MonoBehaviour {
 			data.depths[index]=sprite.sortingOrder;
 			index++;
 		}
+
+
+#if UNITY_EDITOR
+		EditorUtility.SetDirty(data);
+		AssetDatabase.SaveAssets();
+#endif
+
 	}
 	public int GetRelation(GameObject root,GameObject leaf) {
 		int result = 0;
