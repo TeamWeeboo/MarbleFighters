@@ -54,7 +54,7 @@ namespace Combat {
 			timeAfterHit=0;
 			damageTarget.damageSuccess=true;
 			hp-=Random.Range(damage.damageRange.x,damage.damageRange.y+1);
-			rigidbody.AddForce(damage.knockback,ForceMode2D.Impulse);
+			rigidbody.AddForce(damage.knockback,ForceMode.Impulse);
 			Debug.Log(hp);
 
 		}

@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Combat {
 	public class DamageTarget:MonoBehaviour {
-		new Rigidbody2D rigidbody;
+		new Rigidbody rigidbody;
 
 		public delegate void DamageMethod(DamageModel damage);
 		public DamageMethod damaging;
 
 		private void Start() {
-			rigidbody=GetComponentInParent<Rigidbody2D>();
+			rigidbody=GetComponentInParent<Rigidbody>();
 		}
 
 		public bool damageSuccess;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Combat {
 	public class DamageDealer:MonoBehaviour {
-		Collider2D collider;
+		Collider collider;
 
 		[SerializeField] float damageInterval;
 
@@ -16,13 +16,13 @@ namespace Combat {
 		public Angle direction;
 
 		void Start() {
-			collider=GetComponent<Collider2D>();
+			collider=GetComponent<Collider>();
 		}
 		private void OnEnable() {
 			lastDamageTimes.Clear();
 		}
 
-		private void OnTriggerStay2D(Collider2D collision) {
+		private void OnTriggerStay(Collider collision) {
 			if(!this.isActiveAndEnabled)return;
 			for(var t = transform;t!=null;t=t.parent)
 				if(collision.transform==t) return;
@@ -39,7 +39,7 @@ namespace Combat {
 			DamageModel result = new DamageModel();
 			result.damageRange=damageRange;
 			result.damageType=damageType;
-			result.knockback=Utility.Product(relativeKnockback,direction.vector);
+			result.knockback=Utility.Product(relativeKnockback,direction.vector3);
 			return result;
 		}
 	}
