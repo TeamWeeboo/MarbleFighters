@@ -35,7 +35,7 @@ namespace Combat {
 
 
 		private void Update() {
-			SetWeaponRootDirection(currentDirection);
+			//SetWeaponRootDirection(currentDirection);
 		}
 
 		private void FixedUpdate() {

@@ -37,7 +37,7 @@ namespace Combat {
 
 		void UpdateValue() {
 			if(!source) return;
-			ratioRed=(float)source.hp/source.hpMax;
+			ratioRed=(float)source.currentHp/source.maxHp;
 			if(ratioWhite>ratioRed&&source.timeAfterHit>whiteRetractDelay) ratioWhite=Mathf.Max(ratioRed,ratioWhite-whiteRetractSpeed*Time.deltaTime);
 		}
 		void UpdateImage() {
