@@ -25,6 +25,14 @@ namespace Combat {
 		[SerializeReference] bool noPause;
 		public List<Character> playerCharacters;
 
+		public void AddCharacter(Character character){
+
+		}
+		public void RemoveCharacter(Character character){
+
+		}
+		
+
 		int tickPlayed = 9999;
 
 		bool _isPlaying = true;
