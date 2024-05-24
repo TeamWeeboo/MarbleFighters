@@ -40,6 +40,11 @@ namespace UI {
 		public CommandModel currentCommand => (characterIndex<0||characterIndex>=playerCharacters.Count) ? null : currentCommandSet.moves[characterIndex];
 
 		int characterToControl;
+		public void EnterCommandMode(Character character) {
+			List<Character> tempList = new List<Character>(1);
+			tempList.Add(character);
+			EnterCommandMode(tempList,0);
+		}
 		public void EnterCommandMode(List<Character> playerCharacters,int characterToControl = -1) {
 			this.characterToControl=characterToControl;
 			this.playerCharacters=playerCharacters;
@@ -92,7 +97,18 @@ namespace UI {
 			}
 
 			if(characterIndex>playerCharacters.Count) {
-				GameController.instance.SetCommand(currentCommandSet);
+
+				if(characterToControl==-1) {
+					GameController.instance.SetCommand(currentCommandSet);
+				} else {
+					CommandModel command = currentCommandSet.moves[characterToControl];
+					if(command.moveIndex<0) return false;
+					Character targetCharacter= playerCharacters[characterToControl];
+					if(!targetCharacter.CanPlayMove(command.moveIndex)) return false;
+					targetCharacter.movePlayer.StartMove(targetCharacter.moveSet,command.moveIndex,command.moveDirection);
+					GameController.instance.isPlaying=true;
+				}
+
 				gameObject.SetActive(false);
 				return true;
 			}

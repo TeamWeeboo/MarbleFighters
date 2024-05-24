@@ -25,19 +25,20 @@ namespace Combat {
 		[SerializeReference] bool noPause;
 		public List<Character> playerCharacters;
 
-		public void AddCharacter(Character character){
+		public void AddCharacter(Character character) {
 
 		}
-		public void RemoveCharacter(Character character){
+		public void RemoveCharacter(Character character) {
 
 		}
-		
+
 
 		int tickPlayed = 9999;
 
 		bool _isPlaying = true;
 		public bool isPlaying {
-			get => _isPlaying; private set {
+			get => _isPlaying;
+			set {
 				bool original = _isPlaying;
 				_isPlaying=value;
 				if(_isPlaying) {
@@ -66,7 +67,8 @@ namespace Combat {
 		int nextCharacter;
 		void EnterCommandMode() {
 			if(traditionalTurnBased) {
-				UI.CommandPanelController.instance.EnterCommandMode(playerCharacters,nextCharacter);
+				playerCharacters[nextCharacter].decision.PlayDecision();
+				//UI.CommandPanelController.instance.EnterCommandMode(playerCharacters,nextCharacter);
 				for(int _ = 0;_<playerCharacters.Count;_++) {
 					nextCharacter=(nextCharacter+1)%playerCharacters.Count;
 					if(playerCharacters[nextCharacter]) break;
