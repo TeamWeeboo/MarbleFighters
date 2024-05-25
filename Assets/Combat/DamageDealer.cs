@@ -14,13 +14,18 @@ namespace Combat {
 		public DamageType damageType;
 		public Vector2 relativeKnockback;
 		public Angle direction;
+		public Character character;
+
+
 
 		void Start() {
 			collider=GetComponent<Collider>();
+			character = GetComponentInParent<Character>();
 		}
 		private void OnEnable() {
 			lastDamageTimes.Clear();
 		}
+
 
 		private void OnTriggerStay(Collider collision) {
 			if(!this.isActiveAndEnabled)return;
@@ -31,6 +36,12 @@ namespace Combat {
 			if(lastDamageTimes.ContainsKey(target)&&Time.time-lastDamageTimes[target]<damageInterval) return;
 			lastDamageTimes[target]=Time.time;
 
+			Character targetCharacter = collision.GetComponent<Character>();
+			targetCharacter.atkAd = character.currentAd;
+			targetCharacter.atkAp = character.currentAp;
+			targetCharacter.atkAgile = character.currentAgile;
+
+
 			DamageModel damage = GetDamage();
 			target.Damage(damage);
 		}
@@ -39,7 +50,7 @@ namespace Combat {
 			DamageModel result = new DamageModel();
 			result.damageRange=damageRange;
 			result.damageType=damageType;
-			result.knockback=Utility.Product(relativeKnockback,direction.vector3);
+			result.knockback=Utility.Product(relativeKnockback,direction.vector);
 			return result;
 		}
 	}
