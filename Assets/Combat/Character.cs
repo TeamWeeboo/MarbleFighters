@@ -5,6 +5,7 @@ namespace Combat {
 	public class Character:MonoBehaviour {
 
 		public string playerName;
+		public bool isNPC;
 		public string description;
 		public int playerLevel;
 		public int maxLevel;
@@ -17,6 +18,7 @@ namespace Combat {
 		public int levelPoint;
 		public int atkAd, atkAp, atkAgile;
 		public int mainProperty; //所持武器代表属性
+		public bool canMove;
 
 
 		public float timeAfterHit { get; private set; }
