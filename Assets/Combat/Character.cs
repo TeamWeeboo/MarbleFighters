@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AI;
+
 namespace Combat {
 	public class Character:MonoBehaviour {
 
@@ -20,7 +22,7 @@ namespace Combat {
 		public int mainProperty; //所持武器代表属性
 		public bool canMove;
 
-
+		public CharacterDecision decision;
 		public float timeAfterHit { get; private set; }
 
 
@@ -29,6 +31,7 @@ namespace Combat {
 		public MovePlayer movePlayer { get; private set; }
 		public DamageTarget damageTarget { get; private set; }
 		void Start() {
+			decision=GetComponent<CharacterDecision>();
 			rigidbody=GetComponent<Rigidbody>();
 			movePlayer=GetComponent<MovePlayer>();
 			damageTarget=GetComponent<DamageTarget>();

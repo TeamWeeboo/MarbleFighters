@@ -25,7 +25,6 @@ namespace Combat {
 		[SerializeReference] bool noPause;
 		public List<Character> playerCharacters;
 
-
 		public void AddCharacter(Character character){
 			if (nextCharacter == 1){
 				playerCharacters.Add(character);
@@ -45,7 +44,8 @@ namespace Combat {
 
 		bool _isPlaying = true;
 		public bool isPlaying {
-			get => _isPlaying; private set {
+			get => _isPlaying;
+			set {
 				bool original = _isPlaying;
 				_isPlaying=value;
 				if(_isPlaying) {
@@ -75,25 +75,22 @@ namespace Combat {
 		public Character C	;
 		void Update(){
 			if (Input.GetKeyDown(KeyCode.K)){
-				AddCharacter(C);
+				AddCharacter(C); //测试用
 			}
 		}
 
 		public int nextCharacter;
-		void ChangeNextCharacter(){
-			for(int _ = 0;_<playerCharacters.Count;_++) {
+		void EnterCommandMode() {
+			if(traditionalTurnBased) {
+				UI.CommandPanelController.instance.EnterCommandMode(playerCharacters,nextCharacter);
+				Debug.Log(playerCharacters.Count);
+				for(int _ = 0;_<playerCharacters.Count;_++) {
 					nextCharacter=(nextCharacter+1)%playerCharacters.Count;
 					if(playerCharacters.Count > 0){
 						if(nextCharacter == 1 ) playerCharacters.Sort((a, b) => b.currentAgile.CompareTo(a.currentAgile));//当当前角色为列表第一时，重新排序
 					}
 					if(playerCharacters[nextCharacter]) break;
 				}
-		}
-		void EnterCommandMode() {
-			if(traditionalTurnBased) {
-				UI.CommandPanelController.instance.EnterCommandMode(playerCharacters,nextCharacter);
-				Debug.Log(playerCharacters.Count);
-				ChangeNextCharacter();
 				
 			} else UI.CommandPanelController.instance.EnterCommandMode(playerCharacters);
 		}
