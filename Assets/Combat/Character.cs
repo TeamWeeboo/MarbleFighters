@@ -6,6 +6,8 @@ using AI;
 namespace Combat {
 	public class Character:MonoBehaviour {
 
+		public Factions faction;
+
 		public string playerName;
 		public string description;
 		public int playerLevel;

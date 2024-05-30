@@ -6,13 +6,14 @@ using UI;
 namespace Combat {
 	public class PreviewObjectParent:MonoBehaviour {
 		Dictionary<int,(GameObject, GameObject)> previewObjects = new Dictionary<int,(GameObject, GameObject)>();
+
 		void Update() {
 
 			if(CommandPanelController.instance.isActiveAndEnabled) {
 				for(int i = 0;i<CommandPanelController.instance.playerCharacters.Count;i++) {
 
-					if(!CommandPanelController.instance.playerCharacters[i]){
-						if(previewObjects.ContainsKey(i)&&previewObjects[i].Item2){
+					if(!CommandPanelController.instance.playerCharacters[i]) {
+						if(previewObjects.ContainsKey(i)&&previewObjects[i].Item2) {
 							Destroy(previewObjects[i].Item2);
 							previewObjects.Remove(i);
 						}

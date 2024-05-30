@@ -9,12 +9,18 @@ namespace Combat {
 		[SerializeField] int targetIndex;
 		[SerializeField] GameObject characterPrefab;
 		[SerializeField] GameObject dotObject;
+		[SerializeField] GameObject boxObject;
 		[SerializeField] Material hitboxMaterial;
 		MovePlayer movePlayer;
 		Transform weaponObject;
 		float timeSinceStart;
 		int tickSinceStart;
+
+		float moveDistance;
+		float attackRange;
+
 		void Start() {
+			Time.timeScale=0.1f;
 			timeSinceStart=0;
 			tickSinceStart=0;
 			GameObject target = Instantiate(characterPrefab,transform.position,Quaternion.identity);
@@ -34,15 +40,19 @@ namespace Combat {
 					GameObject dot = Instantiate(dotObject,movePlayer.transform.position,Quaternion.identity,transform);
 					dot.GetComponent<PreviewObjectElementController>().thisTime=timeSinceStart;
 					dot.GetComponent<SpriteRenderer>().color=newColor;
+					moveDistance=dot.transform.localPosition.magnitude;
 				}
 
 				if(movePlayer.anim_damaging) {
 
 					GameObject weaponParent = Instantiate(dotObject,weaponObject.position,weaponObject.rotation,transform);
 					weaponParent.GetComponent<SpriteRenderer>().color=Color.clear;
-					MeshRenderer mesh = GameObject.CreatePrimitive(PrimitiveType.Cube).GetComponent<MeshRenderer>();
+					MeshRenderer mesh = Instantiate(boxObject).GetComponent<MeshRenderer>();
 					mesh.transform.parent=weaponParent.transform;
 					BoxCollider weaponCollider = weaponObject.GetComponent<BoxCollider>();
+
+					attackRange=weaponCollider.ClosestPoint(Vector3.right*1000000000f).x-movePlayer.transform.position.x;
+
 					mesh.transform.localScale=weaponCollider.size;
 					mesh.transform.localPosition=weaponCollider.center;
 					mesh.transform.localRotation=Quaternion.identity;
@@ -51,6 +61,8 @@ namespace Combat {
 					mesh.GetComponent<PreviewObjectElementController>().thisTime=timeSinceStart;
 				}
 			} else {
+				GetComponent<PreviewObjectAdditionalData>().attackRange=attackRange;
+				GetComponent<PreviewObjectAdditionalData>().moveDistance=moveDistance;
 				Destroy(this);
 				Destroy(movePlayer.gameObject);
 			}

@@ -8,14 +8,16 @@ namespace AI {
 
 		protected MovePlayer movePlayer;
 		protected Character character;
+		protected CharacterIntention intention;
 
 		public virtual void PlayDecision() {
-
+		
 		}
 
 		void Start() {
 			movePlayer=GetComponent<MovePlayer>();
 			character=GetComponent<Character>();
+			intention=GetComponent<CharacterIntention>();
 		}
 
 	}
