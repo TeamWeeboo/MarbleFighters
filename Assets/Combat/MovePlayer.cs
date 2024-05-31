@@ -35,7 +35,7 @@ namespace Combat {
 
 
 		private void Update() {
-			SetWeaponRootDirection(currentDirection);
+			//SetWeaponRootDirection(currentDirection);
 		}
 
 		private void FixedUpdate() {
@@ -96,7 +96,7 @@ namespace Combat {
 		}
 
 		void UpdateFriction() {
-			float speedChange = rigidbody.velocity.magnitude*0.01f+0.1f;
+			float speedChange = rigidbody.velocity.magnitude*0.1f+0.1f;
 			speedChange*=baseFrictionStrength*(isMoving ? anim_frictionStrength : 1);
 			rigidbody.velocity=Vector3.MoveTowards(rigidbody.velocity,Vector3.zero,speedChange);
 		}

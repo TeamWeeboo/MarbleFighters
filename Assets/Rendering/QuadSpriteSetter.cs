@@ -11,8 +11,9 @@ public class QuadSpriteSetter:MonoBehaviour {
 
 	public Sprite targetSprite;
 	Material material;
+	new MeshRenderer renderer;
 	private void Start() {
-		MeshRenderer renderer = GetComponent<MeshRenderer>();
+		renderer=GetComponent<MeshRenderer>();
 		if(renderer.sharedMaterial!=baseMaterial) renderer.material=baseMaterial;
 		material=renderer.material;
 	}
@@ -23,9 +24,18 @@ public class QuadSpriteSetter:MonoBehaviour {
 		if(sortingOrder<0) transform.localPosition-=new Vector3(0,0.001f,-0.001f);
 		sortingOrder=0;
 		*/
-
-
-		if(!targetSprite) return;
+		/*
+		if(!renderer) renderer=GetComponent<MeshRenderer>();
+		if(renderer.sharedMaterial!=baseMaterial) {
+			renderer.material=baseMaterial;
+			material=renderer.material;
+		}
+		*/
+		if(!targetSprite) {
+			material.SetVector("_min",Vector2.zero);
+			material.SetVector("_max",Vector2.zero);
+			return;
+		}
 		material.mainTexture=targetSprite.texture;
 		material.SetVector("_min",targetSprite.textureRect.min);
 		material.SetVector("_max",targetSprite.textureRect.max);

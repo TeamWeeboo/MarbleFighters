@@ -6,21 +6,43 @@ namespace Combat {
 	public class DamageDealer:MonoBehaviour {
 		Collider collider;
 
+		[SerializeField] float damageInterval;
+
+		Dictionary<DamageTarget,float> lastDamageTimes = new Dictionary<DamageTarget,float>();
+
 		public Vector2Int damageRange;
 		public DamageType damageType;
 		public Vector2 relativeKnockback;
 		public Angle direction;
+		public Character character;
+
+
 
 		void Start() {
 			collider=GetComponent<Collider>();
+			character = GetComponentInParent<Character>();
 		}
-		private void OnTriggerEnter(Collider collision) {
+		private void OnEnable() {
+			lastDamageTimes.Clear();
+		}
+
+
+		private void OnTriggerStay(Collider collision) {
+			if(!this.isActiveAndEnabled)return;
 			for(var t = transform;t!=null;t=t.parent)
 				if(collision.transform==t) return;
-			if(!collision.GetComponent<DamageTarget>()) return;
+			DamageTarget target = collision.GetComponent<DamageTarget>();
+			if(!target) return;
+			if(lastDamageTimes.ContainsKey(target)&&Time.time-lastDamageTimes[target]<damageInterval) return;
+			lastDamageTimes[target]=Time.time;
+
+			Character targetCharacter = collision.GetComponent<Character>();
+			targetCharacter.atkAd = character.currentAd;
+			targetCharacter.atkAp = character.currentAp;
+			targetCharacter.atkAgile = character.currentAgile;
+
 
 			DamageModel damage = GetDamage();
-			DamageTarget target = collision.GetComponent<DamageTarget>();
 			target.Damage(damage);
 		}
 
@@ -29,8 +51,6 @@ namespace Combat {
 			result.damageRange=damageRange;
 			result.damageType=damageType;
 			result.knockback=Utility.Product(relativeKnockback,direction.vector);
-			result.knockback.z=result.knockback.y;
-			result.knockback.y=0;
 			return result;
 		}
 	}

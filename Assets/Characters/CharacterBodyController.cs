@@ -9,6 +9,7 @@ public class CharacterBodyController:MonoBehaviour {
 	[SerializeField] CharacterSpriteData spriteBack;
 	[SerializeField] Transform handParent;
 	[SerializeField] Transform weaponParent;
+	[SerializeField] Transform hand;
 
 	MovePlayer movePlayer;
 	CharacterSpriteSetter spriteSetter;
@@ -23,18 +24,23 @@ public class CharacterBodyController:MonoBehaviour {
 		Angle selfAngle = new Angle();
 		selfAngle.quaternion3=transform.rotation;
 		direction+=selfAngle;
-		Debug.Log(direction.degree);
+		//Debug.Log(direction.degree);
 		if(direction.IfBetween(0,180)) spriteSetter.LoadSpritesFromData(spriteBack);
 		else spriteSetter.LoadSpritesFromData(spriteFront);
 
 		if(direction.IfBetween(-90,90)!=isFlipped) {
 			isFlipped=direction.IfBetween(-90,90);
 			transform.localScale=Flip(transform.localScale);
-			handParent.localScale=Flip(handParent.localScale);
+			//handParent.localScale=Flip(handParent.localScale);
 			weaponParent.localScale=Flip(weaponParent.localScale);
 		}
 
+		Angle handDirection = direction;
+		if(isFlipped) handDirection.degree=-handDirection.degree;
+		else handDirection.degree=handDirection.degree-180;
+		hand.transform.localRotation=handDirection.quaternion;
+
 	}
-	bool isFlipped;
+	public bool isFlipped { get; private set; }
 	Vector3 Flip(Vector3 origin) => new Vector3(-origin.x,origin.y,origin.z);
 }

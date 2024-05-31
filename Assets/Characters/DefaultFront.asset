@@ -12,5 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6b6bbe93905d4aabfe08f3c544efa, type: 3}
   m_Name: DefaultFront
   m_EditorClassIdentifier: 
-  relations: 
-  sprites: []
+  relations: c99f1eba87a7131b82d86aa0ee4ade68fa66869c8bb3e7f5433f913ff563bbe3af266de15ad2015e09d256d14077b5ca41d853b4155bf77f82e0861ce538d021
+  sprites:
+  - {fileID: -2469553646774471316, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: -814171333186968260, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 4820781373426026681, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: -6727776607435573843, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 5556690684887962003, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: -1235762607869228369, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: -7935842303540447590, guid: aaf72ac18ec860f4eb58dbf15d0cf692, type: 3}
+  - {fileID: -2183322726289036371, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: -3494656269927801616, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 6731739754744416770, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 5268712546129739941, guid: aaf72ac18ec860f4eb58dbf15d0cf692, type: 3}
+  - {fileID: 6554433653421105715, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 436765244024121119, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 4422953646914825099, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 7320093354382924925, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  - {fileID: 2084236677604194588, guid: a9af557f54489214984f35e842dbcb5c, type: 3}
+  positions:
+  - {x: 1.07, y: 9.37, z: 0}
+  - {x: 2.0024428, y: -2.0811138, z: -0.0060000005}
+  - {x: 0.48, y: -1.6990001, z: -0.0009999997}
+  - {x: -1.27, y: -1.4239999, z: -0.0060000005}
+  - {x: -2.09, y: -0.239, z: -0.0009999997}
+  - {x: -1.4, y: 0.30399996, z: 0.006}
+  - {x: -15.771786, y: -1.0217965, z: 0}
+  - {x: 0.64, y: 2.592, z: -0.002}
+  - {x: -0.83, y: 2.571, z: -0.0010000003}
+  - {x: -0.3, y: 5.0720005, z: -0.0020000003}
+  - {x: 13.650387, y: 1.6750561, z: 0}
+  - {x: -0.42, y: 0.36299998, z: 0.001}
+  - {x: 0.23, y: -1.783, z: 0.002998508}
+  - {x: 1.25, y: -4.3580003, z: -0.0019999994}
+  - {x: -0.8, y: -1.6650007, z: 0.0050025815}
+  - {x: -0.9, y: -4.89, z: -0.0010000002}
+  depths: ffffffff0500000006000000050000000600000000000000f6ffffff01000000020000000300000001000000fefffffffbfffffffdfffffff9fffffffaffffff
