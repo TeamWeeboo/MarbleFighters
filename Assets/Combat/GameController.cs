@@ -52,7 +52,7 @@ namespace Combat {
 					Time.timeScale=1;
 				} else {
 					if(!noPause) Time.timeScale=0;
-					if(original) EnterCommandMode();
+					//if(original) EnterCommandMode();
 				}
 			}
 		}
@@ -67,7 +67,7 @@ namespace Combat {
 		private void FixedUpdate() {
 			tickPlayed++;
 			if(tickPlayed>tickPerRound) {
-				isPlaying=false;
+				EnterCommandMode();
 				tickPlayed=0;
 			}
 			

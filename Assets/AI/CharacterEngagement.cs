@@ -13,9 +13,23 @@ namespace AI {
 		private void Start() {
 			character=GetComponent<Character>();
 		}
-		void Update() {
-			
+
+		private void FixedUpdate() {
+
+			Character target = IntentionGroup.GetTarget(character,hpWeight: 0);
+
+			if(GameController.instance.playerCharacters.Contains(character)) {
+				if((target.transform.position-transform.position).magnitude>disengageDistance) {
+					GameController.instance.RemoveCharacter(character);
+				}
+			} else {
+				if((target.transform.position-transform.position).magnitude<engageDistance) {
+					GameController.instance.AddCharacter(character);
+				}
+			}
+
 		}
+
 	}
 
 }

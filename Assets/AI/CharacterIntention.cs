@@ -7,15 +7,15 @@ using Combat;
 namespace AI {
 	public class CharacterIntention:MonoBehaviour {
 
-		public Character character;
-		public MovePlayer movePlayer;
-		public CharacterDecision decision;
-		public IntentionModel lastIntention{ get; protected set; }
+		[HideInInspector] public Character character;
+		[HideInInspector] public MovePlayer movePlayer;
+		[HideInInspector] public CharacterDecision decision;
+		public IntentionModel lastIntention { get; protected set; }
 
 		[SerializeField] string intentionGroupTypeName;
-		public IntentionGroup originalIntentionGroup{ get; protected set; }
+		public IntentionGroup originalIntentionGroup { get; protected set; }
 		public IntentionGroup currentIntentionGroup { get; protected set; }
-		
+
 		void Start() {
 			Type intentionGroupType = Type.GetType(intentionGroupTypeName);
 			if(intentionGroupType==null) intentionGroupType=Type.GetType("AI."+intentionGroupTypeName);
@@ -40,9 +40,9 @@ namespace AI {
 				if(currentIntentionGroup==newGroup) return;
 				currentIntentionGroup.RemoveCharacter(this);
 				originalIntentionGroup.AddCharacter(this);
-				
+
 			} else {
-				
+
 
 			}
 		}
