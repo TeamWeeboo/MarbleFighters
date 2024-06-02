@@ -46,6 +46,7 @@ namespace UI {
 			EnterCommandMode(tempList,0);
 		}
 		public void EnterCommandMode(List<Character> playerCharacters,int characterToControl = -1) {
+			GameController.instance.isPlaying=false;
 			this.characterToControl=characterToControl;
 			this.playerCharacters=playerCharacters;
 			currentCommandSet=new CommandSetModel(playerCharacters.Count);
@@ -63,6 +64,11 @@ namespace UI {
 				if(characterIndex>=playerCharacters.Count) break;
 				if(HasMove(characterIndex)) break;
 				characterIndex++;
+			}
+			if(characterIndex>=playerCharacters.Count) {
+				GameController.instance.isPlaying=true;
+				gameObject.SetActive(false);
+				return;
 			}
 
 			gameObject.SetActive(true);

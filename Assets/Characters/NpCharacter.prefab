@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NpCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 3705260417816394861, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
+      propertyPath: faction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3720067506892868517, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

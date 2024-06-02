@@ -7,7 +7,7 @@ namespace AI {
 	public class IntentionGroup {
 
 		public CharacterIntention owner;
-		public HashSet<CharacterIntention> members;
+		public HashSet<CharacterIntention> members=new HashSet<CharacterIntention>();
 
 		public IntentionModel generalIntention = new IntentionModel();
 

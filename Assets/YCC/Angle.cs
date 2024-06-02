@@ -26,11 +26,11 @@ public struct Angle {
 	}
 	public Vector2 vector {
 		get { return new Vector2(cos,sin); }
-		set { this=new Angle(vector); }
+		set { this=new Angle(value); }
 	}
 	public Vector3 vector3 {
 		get { return new Vector3(cos,0,sin); }
-		set { this=new Angle(vector); }
+		set { this=new Angle(value); }
 	}
 	public int direction {
 		get {

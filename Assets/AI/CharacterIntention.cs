@@ -23,7 +23,8 @@ namespace AI {
 			if(intentionGroupType==null) intentionGroupType=typeof(CharacterIntention);
 			originalIntentionGroup=intentionGroupType.GetConstructor(new Type[0]).Invoke(new object[0]) as IntentionGroup;
 			if(originalIntentionGroup==null) originalIntentionGroup=new IntentionGroup();
-			currentIntentionGroup=originalIntentionGroup;
+			originalIntentionGroup.owner=this;
+			currentIntentionGroup =originalIntentionGroup;
 			character=GetComponent<Character>();
 			movePlayer=GetComponent<MovePlayer>();
 			decision=GetComponent<CharacterDecision>();

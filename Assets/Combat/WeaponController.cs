@@ -27,6 +27,5 @@ public class WeaponController:MonoBehaviour {
 		//transform.rotation=weaponAngle.quaternion3;
 		//transform.localRotation=targetTransform.rotation;
 		transform.parent.rotation=(-movePlayer.currentDirection).quaternion3;
-		Debug.Log(movePlayer.currentDirection.quaternion3.eulerAngles);
 	}
 }

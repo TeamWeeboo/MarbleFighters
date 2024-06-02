@@ -82,7 +82,9 @@ namespace Combat {
 		public int nextCharacter;
 		void EnterCommandMode() {
 			if(traditionalTurnBased) {
-				UI.CommandPanelController.instance.EnterCommandMode(playerCharacters,nextCharacter);
+				//UI.CommandPanelController.instance.EnterCommandMode(playerCharacters,nextCharacter);
+				playerCharacters[nextCharacter].decision.PlayDecision();
+				
 				Debug.Log(playerCharacters.Count);
 				for(int _ = 0;_<playerCharacters.Count;_++) {
 					nextCharacter=(nextCharacter+1)%playerCharacters.Count;

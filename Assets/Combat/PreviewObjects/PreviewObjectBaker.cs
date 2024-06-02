@@ -18,7 +18,7 @@ namespace Combat {
 
 		float moveDistance;
 		float attackRange;
-		float attackMinDistance=1000;
+		float attackMinDistance = 1000;
 		float attackTimeTotal;
 		int attackFrameTotal;
 
@@ -72,6 +72,7 @@ namespace Combat {
 				data.moveDistance=moveDistance;
 				data.attackMinDistance=attackMinDistance;
 				data.attackTime=attackTimeTotal/attackFrameTotal;
+				if(attackFrameTotal==0) data.attackTime=0;
 				Destroy(this);
 				Destroy(movePlayer.gameObject);
 			}
