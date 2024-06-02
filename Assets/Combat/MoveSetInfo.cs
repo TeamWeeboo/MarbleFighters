@@ -52,7 +52,7 @@ namespace Combat {
 		float _moveDistance = float.PositiveInfinity;
 		public float moveDistance {
 			get {
-				if(!float.IsPositiveInfinity(_moveDistance)) return _moveDistance;
+				//if(!float.IsPositiveInfinity(_moveDistance)) return _moveDistance;
 				if(!previewObject) return 0;
 				if(!previewObject.TryGetComponent<PreviewObjectAdditionalData>(out var data)) return 0;
 				_moveDistance=data.moveDistance;

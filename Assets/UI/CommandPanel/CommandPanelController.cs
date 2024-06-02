@@ -37,6 +37,8 @@ namespace UI {
 		Dictionary<Character,int> lastMoves = new Dictionary<Character,int>();
 
 		public void EnterCommandMode(Character character) {
+			if(!character.HasMove()) return;
+
 			GameController.instance.isPlaying=false;
 			currentCommand=new CommandModel();
 			currentCharacter=character;
