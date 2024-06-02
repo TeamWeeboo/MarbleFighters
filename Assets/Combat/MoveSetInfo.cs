@@ -75,7 +75,7 @@ namespace Combat {
 				if(!float.IsPositiveInfinity(_attackTime)) return _attackTime;
 				if(!previewObject) return 0;
 				if(!previewObject.TryGetComponent<PreviewObjectAdditionalData>(out var data)) return 0;
-				_moveDistance=data.attackTime;
+				_attackTime=data.attackTime;
 				return data.attackTime;
 			}
 		}
