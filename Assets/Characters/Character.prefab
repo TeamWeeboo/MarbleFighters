@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4ea0340610d1842b19b4f782f731ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageInterval: 0
+  damageInterval: 1
   damageRange: {x: 0, y: 0}
   damageType: 0
   relativeKnockback: {x: 0, y: 0}
