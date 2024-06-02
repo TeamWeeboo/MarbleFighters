@@ -23,7 +23,7 @@ namespace Combat {
 		int attackFrameTotal;
 
 		void Start() {
-			Time.timeScale=0.1f;
+			//Time.timeScale=0.1f;
 			timeSinceStart=0;
 			tickSinceStart=0;
 			GameObject target = Instantiate(characterPrefab,transform.position,Quaternion.identity);
@@ -63,8 +63,12 @@ namespace Combat {
 					mesh.transform.localPosition=weaponCollider.center;
 					mesh.transform.localRotation=Quaternion.identity;
 
+					mesh.sharedMaterial=hitboxMaterial;
 					mesh.material.color=newColor;
-					mesh.GetComponent<PreviewObjectElementController>().thisTime=timeSinceStart;
+					PreviewObjectElementController elementController = mesh.GetComponent<PreviewObjectElementController>();
+					elementController.material=hitboxMaterial;
+					elementController.thisTime=timeSinceStart;
+					elementController.color=newColor;
 				}
 			} else {
 				PreviewObjectAdditionalData data = GetComponent<PreviewObjectAdditionalData>();

@@ -238,6 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   attackRange: 0
+  attackMinDistance: 0
+  attackTime: 0
 --- !u!1 &227137275
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 227137275}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.45, y: 15.7, z: 22.34}
+  m_LocalPosition: {x: 31.45, y: 0.1272795, z: 22.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -303,6 +305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   attackRange: 0
+  attackMinDistance: 0
+  attackTime: 0
 --- !u!1001 &248476570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,6 +705,8 @@ MonoBehaviour:
   playerCharacters:
   - {fileID: 0}
   - {fileID: 0}
+  C: {fileID: 0}
+  nextCharacter: 0
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   attackRange: 0
+  attackMinDistance: 0
+  attackTime: 0
 --- !u!1 &1022755476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   attackRange: 0
+  attackMinDistance: 0
+  attackTime: 0
 --- !u!1 &1183551721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1361,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   attackRange: 0
+  attackMinDistance: 0
+  attackTime: 0
 --- !u!1 &1269321638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   attackRange: 0
+  attackMinDistance: 0
+  attackTime: 0
 --- !u!1 &1851255716
 GameObject:
   m_ObjectHideFlags: 0

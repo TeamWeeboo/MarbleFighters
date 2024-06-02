@@ -6,7 +6,13 @@ namespace Combat {
 		public float thisTime;
 		public Vector2 velocityVector;
 		Vector2 initPosition;
+		public Color color;
+		public Material material;
 		void Start() {
+			if(TryGetComponent(out MeshRenderer mesh)) {
+				mesh.material=material;
+				mesh.material.color=color;
+			}
 			initPosition=transform.localPosition;
 		}
 		void Update() {

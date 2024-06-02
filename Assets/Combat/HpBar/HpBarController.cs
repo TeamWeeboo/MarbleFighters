@@ -17,6 +17,8 @@ namespace Combat {
 		public Character source;
 		Image overlayRed;
 		Image overlayWhite;
+		Image overlayArmor;
+		Image overlayArmorWhite;
 
 		[SerializeField]
 		float whiteRetractDelay = 0.1f;
@@ -25,6 +27,8 @@ namespace Combat {
 
 		float ratioWhite = 1;
 		float ratioRed = 1;
+		float ratioArmor = 1;
+		float ratioArmorWhite = 1;
 
 		void GetComponentReference() {
 			source=GetComponentInParent<Character>();
@@ -32,17 +36,25 @@ namespace Combat {
 			foreach(Image i in images) {
 				if(i.name=="HealthBarOverlayWhite") overlayWhite=i;
 				if(i.name=="HealthBarOverlayRed") overlayRed=i;
+				if(i.name=="HealthBarOverlayArmor") overlayArmor=i;
+				if(i.name=="HealthBarOverlayArmorWhite") overlayArmorWhite=i;
 			}
 		}
 
 		void UpdateValue() {
 			if(!source) return;
 			ratioRed=(float)source.currentHp/source.maxHp;
-			if(ratioWhite>ratioRed&&source.timeAfterHit>whiteRetractDelay) ratioWhite=Mathf.Max(ratioRed,ratioWhite-whiteRetractSpeed*Time.deltaTime);
+			ratioArmor=(float)source.currentArmor/source.originArmor;
+			if(ratioWhite>ratioRed&&source.timeAfterHit>whiteRetractDelay)
+				ratioWhite=Mathf.Max(ratioRed,ratioWhite-whiteRetractSpeed*Time.deltaTime);
+			if(ratioArmorWhite>ratioArmor&&source.timeAfterHit>whiteRetractDelay)
+				ratioArmorWhite=Mathf.Max(ratioArmor,ratioArmorWhite-whiteRetractSpeed*Time.deltaTime);
 		}
 		void UpdateImage() {
 			overlayRed.fillAmount=ratioRed;
 			overlayWhite.fillAmount=ratioWhite;
+			overlayArmor.fillAmount=ratioArmor;
+			overlayArmorWhite.fillAmount=ratioArmorWhite;
 		}
 	}
 }
