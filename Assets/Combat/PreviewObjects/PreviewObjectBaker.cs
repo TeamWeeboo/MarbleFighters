@@ -18,6 +18,9 @@ namespace Combat {
 
 		float moveDistance;
 		float attackRange;
+		float attackMinDistance=1000;
+		float attackTimeTotal;
+		int attackFrameTotal;
 
 		void Start() {
 			Time.timeScale=0.1f;
@@ -51,7 +54,10 @@ namespace Combat {
 					mesh.transform.parent=weaponParent.transform;
 					BoxCollider weaponCollider = weaponObject.GetComponent<BoxCollider>();
 
-					attackRange=weaponCollider.ClosestPoint(Vector3.right*1000000000f).x-movePlayer.transform.position.x;
+					attackRange=Mathf.Max(attackRange,weaponCollider.ClosestPoint(Vector3.right*1000000000f).x-movePlayer.transform.position.x);
+					attackMinDistance=Mathf.Min(attackMinDistance,weaponCollider.ClosestPoint(Vector3.left*1000000000f).x-movePlayer.transform.position.x);
+					attackTimeTotal+=timeSinceStart;
+					attackFrameTotal++;
 
 					mesh.transform.localScale=weaponCollider.size;
 					mesh.transform.localPosition=weaponCollider.center;
@@ -61,8 +67,11 @@ namespace Combat {
 					mesh.GetComponent<PreviewObjectElementController>().thisTime=timeSinceStart;
 				}
 			} else {
-				GetComponent<PreviewObjectAdditionalData>().attackRange=attackRange;
-				GetComponent<PreviewObjectAdditionalData>().moveDistance=moveDistance;
+				PreviewObjectAdditionalData data = GetComponent<PreviewObjectAdditionalData>();
+				data.attackRange=attackRange;
+				data.moveDistance=moveDistance;
+				data.attackMinDistance=attackMinDistance;
+				data.attackTime=attackTimeTotal/attackFrameTotal;
 				Destroy(this);
 				Destroy(movePlayer.gameObject);
 			}

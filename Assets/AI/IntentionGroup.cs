@@ -26,16 +26,31 @@ namespace AI {
 		}
 
 		public virtual IntentionModel GetIntention(CharacterIntention sender) {
+			IntentionModel result = new IntentionModel();
 			if(members.Count>1) {
 				//多人
 				Character target = GetTarget(owner.character,distanceWeight: 0);
-				float distance = (sender.transform.position-target.transform.position).magnitude;
-				//f(distance<)
+				if(target) {
+					float distance = (sender.transform.position-target.transform.position).magnitude;
+					result.targetCharacter=target;
+					result.intentionType=IntentionType.Attack;
+				} else {
+					result.intentionType=IntentionType.Hold;
+					result.targetPosition=sender.transform.position;
+				}
 			} else {
 				//单人
-
+				Character target = GetTarget(owner.character,distanceWeight: 2);
+				if(target) {
+					float distance = (sender.transform.position-target.transform.position).magnitude;
+					result.targetCharacter=target;
+					result.intentionType=IntentionType.Attack;
+				} else {
+					result.intentionType=IntentionType.Hold;
+					result.targetPosition=sender.transform.position;
+				}
 			}
-			return null;
+			return result;
 		}
 
 		public static Character GetTarget(Character sender,float maxScore = 0,float relationWeight = 100000,float distanceWeight = 1,float hpWeight = 1) {
@@ -62,10 +77,10 @@ namespace AI {
 
 	public enum IntentionType {
 		Nothing = 0,
-		Approach = 1,
-		Attack = 2,
-		Defend = 3,
-		Recover = 4,
+		Attack = 1,
+		Move = 2,
+		Recover = 3,
+		Hold = 4,
 	}
 
 	public class IntentionModel {
