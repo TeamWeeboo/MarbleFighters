@@ -243,7 +243,7 @@ ScriptedImporter:
     spritePosition: {x: 1489, y: 996}
   - name: "\u670D\u88C5\u4E0B\u534A\u8EAB"
     originalName: 
-    pivot: {x: 0.5119573, y: 0.9502514}
+    pivot: {x: 0.508625, y: 0.47576696}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
