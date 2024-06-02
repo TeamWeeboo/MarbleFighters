@@ -40,8 +40,6 @@ namespace Combat {
 			targetCharacter.atkAd = character.currentAd;
 			targetCharacter.atkAp = character.currentAp;
 			targetCharacter.atkAgile = character.currentAgile;
-
-
 			DamageModel damage = GetDamage();
 			target.Damage(damage);
 		}
