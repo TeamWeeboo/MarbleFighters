@@ -49,6 +49,12 @@ namespace Combat {
 				if(movePlayer.anim_damaging) {
 
 					GameObject weaponParent = Instantiate(dotObject,weaponObject.position,weaponObject.rotation,transform);
+					Vector3 originalScale = weaponParent.transform.localScale;
+					originalScale.x*=weaponObject.localScale.x;
+					originalScale.y*=weaponObject.localScale.y;
+					originalScale.z*=weaponObject.localScale.z;
+					weaponParent.transform.localScale=originalScale;
+
 					weaponParent.GetComponent<SpriteRenderer>().color=Color.clear;
 					MeshRenderer mesh = Instantiate(boxObject).GetComponent<MeshRenderer>();
 					mesh.transform.parent=weaponParent.transform;
