@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3392c6604f85f64a8f4bbc70392dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
+  moveSet: {fileID: 11400000, guid: b64e992ed6fe5d647ae00a258d91f486, type: 2}
   targetIndex: 1
   characterPrefab: {fileID: 2551373184580047814, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3392c6604f85f64a8f4bbc70392dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
+  moveSet: {fileID: 11400000, guid: b64e992ed6fe5d647ae00a258d91f486, type: 2}
   targetIndex: 0
   characterPrefab: {fileID: 1074754792846040154, guid: 371eb0148e3a95444a86475db50937b2, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3392c6604f85f64a8f4bbc70392dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
+  moveSet: {fileID: 11400000, guid: b64e992ed6fe5d647ae00a258d91f486, type: 2}
   targetIndex: 2
   characterPrefab: {fileID: 2551373184580047814, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3392c6604f85f64a8f4bbc70392dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
+  moveSet: {fileID: 11400000, guid: b64e992ed6fe5d647ae00a258d91f486, type: 2}
   targetIndex: 4
   characterPrefab: {fileID: 2551373184580047814, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3392c6604f85f64a8f4bbc70392dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
+  moveSet: {fileID: 11400000, guid: b64e992ed6fe5d647ae00a258d91f486, type: 2}
   targetIndex: 5
   characterPrefab: {fileID: 2551373184580047814, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
@@ -1913,7 +1913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3392c6604f85f64a8f4bbc70392dba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
+  moveSet: {fileID: 11400000, guid: b64e992ed6fe5d647ae00a258d91f486, type: 2}
   targetIndex: 3
   characterPrefab: {fileID: 2551373184580047814, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
   dotObject: {fileID: 5770386658908969907, guid: 4114b940d0687cf4ea9080480cb9bcae, type: 3}
@@ -2268,7 +2268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcd72e3571b07b44999cd30e5d1638a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacters: []
+  currentCharacter: {fileID: 0}
 --- !u!1 &2059697764
 GameObject:
   m_ObjectHideFlags: 0

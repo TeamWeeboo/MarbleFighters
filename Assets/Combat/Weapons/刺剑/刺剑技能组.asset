@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a023c1b28bf474cb75a03de4b71b98, type: 3}
+  m_Name: "\u523A\u5251\u6280\u80FD\u7EC4"
+  m_EditorClassIdentifier: 
+  moves:
+  - damageRange: {x: 2, y: 4}
+    damageType: 1
+    relativeKnockback: {x: 5, y: -10}
+    moveDuration: 60
+    maxResetSpeed: 2
+    maxInitialSpeed: 20
+    previewObject: {fileID: 5868195678650126367, guid: 89fe6565e2cbf424f9c94531c153236d, type: 3}
+    moveName: Slash
+    moveIcon: {fileID: 0}
+  - damageRange: {x: 2, y: 4}
+    damageType: 1
+    relativeKnockback: {x: 5, y: 0}
+    moveDuration: 60
+    maxResetSpeed: 2
+    maxInitialSpeed: 60
+    previewObject: {fileID: 3503597111191921281, guid: 13670c4de0290a14386ca69545491536, type: 3}
+    moveName: Thrash
+    moveIcon: {fileID: 0}
+  - damageRange: {x: 2, y: 4}
+    damageType: 1
+    relativeKnockback: {x: 2, y: 0}
+    moveDuration: 60
+    maxResetSpeed: 2
+    maxInitialSpeed: 30
+    previewObject: {fileID: 7472942513571989224, guid: f0acdc1d75d7b2244b25a00121de0a85, type: 3}
+    moveName: Pommel Strike
+    moveIcon: {fileID: 0}
+  - damageRange: {x: 0, y: 0}
+    damageType: 1
+    relativeKnockback: {x: 0, y: 0}
+    moveDuration: 0
+    maxResetSpeed: 0
+    maxInitialSpeed: 0
+    previewObject: {fileID: 7729229078470044454, guid: e415a7082606dc94fb333729ae7d6915, type: 3}
+    moveName: 
+    moveIcon: {fileID: 0}
+  - damageRange: {x: 0, y: 0}
+    damageType: 1
+    relativeKnockback: {x: 0, y: 0}
+    moveDuration: 60
+    maxResetSpeed: 2
+    maxInitialSpeed: 100
+    previewObject: {fileID: 8909498855489748179, guid: 513db33a1b2c97048959081dc86c99c4, type: 3}
+    moveName: Run
+    moveIcon: {fileID: 0}
+  - damageRange: {x: 0, y: 0}
+    damageType: 1
+    relativeKnockback: {x: 0, y: 0}
+    moveDuration: 60
+    maxResetSpeed: 20
+    maxInitialSpeed: 100
+    previewObject: {fileID: 2549357738982305674, guid: d295754b31a2ed942b2aa84fc2eeca98, type: 3}
+    moveName: Halt
+    moveIcon: {fileID: 0}
+  animations: {fileID: 22100000, guid: c6895fc63bcdc4e4497c924608872cf1, type: 2}
