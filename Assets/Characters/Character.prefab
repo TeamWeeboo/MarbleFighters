@@ -678,11 +678,13 @@ MonoBehaviour:
   weight: 0
   agileOffset: 0
   levelPoint: 0
-  atkAd: 0
-  atkAp: 0
-  atkAgile: 0
   mainProperty: 0
-  canMove: 0
+  baseAd: 100
+  baseAp: 0
+  baseAgile: 0
+  atkAd: 0
+  atkAgile: 0
+  atkAp: 0
   decision: {fileID: 0}
   moveSet: {fileID: 11400000, guid: a87a3b08b229f3e45b7308c38db55e23, type: 2}
   rigidbody: {fileID: 0}
