@@ -20,7 +20,7 @@ namespace Combat {
 
 		void Start() {
 			collider=GetComponent<Collider>();
-			character = GetComponentInParent<Character>();
+			character=GetComponentInParent<Character>();
 		}
 		private void OnEnable() {
 			lastDamageTimes.Clear();
@@ -28,7 +28,7 @@ namespace Combat {
 
 
 		private void OnTriggerStay(Collider collision) {
-			if(!this.isActiveAndEnabled)return;
+			if(!this.isActiveAndEnabled) return;
 			for(var t = transform;t!=null;t=t.parent)
 				if(collision.transform==t) return;
 			DamageTarget target = collision.GetComponent<DamageTarget>();
@@ -37,9 +37,11 @@ namespace Combat {
 			lastDamageTimes[target]=Time.time;
 
 			Character targetCharacter = collision.GetComponent<Character>();
-			targetCharacter.atkAd = character.currentAd;
-			targetCharacter.atkAp = character.currentAp;
-			targetCharacter.atkAgile = character.currentAgile;
+			targetCharacter.atkAd=character.currentAd;
+			targetCharacter.atkAp=character.currentAp;
+			targetCharacter.atkAgile=character.currentAgile;
+
+
 			DamageModel damage = GetDamage();
 			target.Damage(damage);
 		}

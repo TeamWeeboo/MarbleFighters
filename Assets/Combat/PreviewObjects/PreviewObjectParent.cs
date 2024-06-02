@@ -5,59 +5,47 @@ using UI;
 
 namespace Combat {
 	public class PreviewObjectParent:MonoBehaviour {
-		Dictionary<int,(GameObject, GameObject)> previewObjects = new Dictionary<int,(GameObject, GameObject)>();
+		//Dictionary<int,(GameObject, GameObject)> previewObjects = new Dictionary<int,(GameObject, GameObject)>();
+		GameObject previewObject;
+		GameObject previewObjectPrefab;
 
 		void Update() {
 
 			if(CommandPanelController.instance.isActiveAndEnabled) {
-				for(int i = 0;i<CommandPanelController.instance.playerCharacters.Count;i++) {
+				Character character = CommandPanelController.instance.currentCharacter;
 
-					if(!CommandPanelController.instance.playerCharacters[i]) {
-						if(previewObjects.ContainsKey(i)&&previewObjects[i].Item2) {
-							Destroy(previewObjects[i].Item2);
-							previewObjects.Remove(i);
-						}
-						continue;
+				CommandModel command = CommandPanelController.instance.currentCommand;
+				int moveIndex = command.moveIndex;
+
+				if(moveIndex<0) {
+					//无预览
+					if(previewObject) {
+						Destroy(previewObject);
+						previewObject=null;
+						previewObjectPrefab=null;
 					}
-
-					CommandModel command = CommandPanelController.instance.currentCommandSet.moves[i];
-					int moveIndex = command.moveIndex;
-					Character character = CommandPanelController.instance.playerCharacters[i];
-
-					if(moveIndex<0) {
-						//无预览
-						if(previewObjects.ContainsKey(i)) {
-							Destroy(previewObjects[i].Item2);
-							previewObjects.Remove(i);
+				} else {
+					//有预览
+					GameObject prefab = character.moveSet.moves[moveIndex].previewObject;
+					if(!previewObject||previewObjectPrefab!=prefab) {
+						Destroy(previewObject);
+						GameObject newPreviewObject = Instantiate(prefab,character.transform.position,command.moveDirection.quaternion3,transform);
+						foreach(var element in newPreviewObject.GetComponentsInChildren<PreviewObjectElementController>()) {
+							element.velocityVector=character.rigidbody.velocity;
 						}
-					} else {
-						//有预览
-						GameObject prefab = character.moveSet.moves[moveIndex].previewObject;
-						if(!previewObjects.ContainsKey(i)||previewObjects[i].Item1!=prefab) {
-							//需要更新预览
-							if(previewObjects.ContainsKey(i)) {
-								Destroy(previewObjects[i].Item2);
-							}
-
-							GameObject newPreviewObject = Instantiate(prefab,character.transform.position,command.moveDirection.quaternion3,transform);
-							foreach(var element in newPreviewObject.GetComponentsInChildren<PreviewObjectElementController>()) {
-								element.velocityVector=character.rigidbody.velocity;
-							}
-							if(previewObjects.ContainsKey(i)) {
-								previewObjects[i]=(prefab, newPreviewObject);
-							} else {
-								previewObjects.Add(i,(prefab, newPreviewObject));
-							}
-						}
-						previewObjects[i].Item2.transform.rotation=(-command.moveDirection).quaternion3;
+						previewObject=newPreviewObject;
+						previewObjectPrefab=prefab;
 					}
+					previewObject.transform.rotation=(-command.moveDirection).quaternion3;
 
 				}
 			} else {
-				foreach(var i in previewObjects) {
-					Destroy(i.Value.Item2);
+				//销毁预览
+				if(previewObject) {
+					Destroy(previewObject);
+					previewObject=null;
+					previewObjectPrefab=null;
 				}
-				previewObjects.Clear();
 			}
 
 		}

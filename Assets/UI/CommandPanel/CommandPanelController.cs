@@ -11,6 +11,7 @@ namespace UI {
 		public static CommandPanelController instance;
 		void Start() {
 			instance=this;
+			gameObject.SetActive(false);
 		}
 		void Update() {
 
@@ -21,65 +22,36 @@ namespace UI {
 			if(Input.GetKeyDown(KeyCode.A)) SelectMove(MoveSetInfo.moveRunIndex);
 			if(Input.GetKeyDown(KeyCode.S)) SelectMove(MoveSetInfo.moveHaltIndex);
 
-			if(Input.GetMouseButtonDown(0)) NextCharacter();
-			if(Input.GetMouseButtonDown(1)) PreviousCharacter();
+			if(Input.GetMouseButtonDown(0)) ConfirmMove();
+			//if(Input.GetMouseButtonDown(1)) PreviousCharacter();
 
 			if(currentCharacter!=null) {
 				currentCommand.moveDirection=new Angle(MainCameraController.mouseWorldPosition-currentCharacter.transform.position);
-				//Debug.Log(currentCommand.moveDirection.degree);
 				currentCharacter.GetComponent<MovePlayer>().currentDirection=currentCommand.moveDirection;
 			}
 
 		}
 
-		public List<Character> playerCharacters;
-		public CommandSetModel currentCommandSet;
+		public Character currentCharacter;
+		public CommandModel currentCommand;
 		Dictionary<Character,int> lastMoves = new Dictionary<Character,int>();
-		public int characterIndex { get; private set; }
-		public Character currentCharacter => (characterIndex<0||characterIndex>=playerCharacters.Count) ? null : playerCharacters[characterIndex];
-		public CommandModel currentCommand => (characterIndex<0||characterIndex>=playerCharacters.Count) ? null : currentCommandSet.moves[characterIndex];
 
-		int characterToControl;
 		public void EnterCommandMode(Character character) {
-			List<Character> tempList = new List<Character>(1);
-			tempList.Add(character);
-			EnterCommandMode(tempList,0);
-		}
-		public void EnterCommandMode(List<Character> playerCharacters,int characterToControl = -1) {
 			GameController.instance.isPlaying=false;
-			this.characterToControl=characterToControl;
-			this.playerCharacters=playerCharacters;
-			currentCommandSet=new CommandSetModel(playerCharacters.Count);
+			currentCommand=new CommandModel();
+			currentCharacter=character;
 
-			for(int i = 0;i<currentCommandSet.moves.Length;i++) {
-				if(!playerCharacters[i]) continue;
-				if(lastMoves.ContainsKey(playerCharacters[i])) {
-					int lastMove = lastMoves[playerCharacters[i]];
-					if(playerCharacters[i].CanPlayMove(lastMove))
-						currentCommandSet.moves[i].moveIndex=lastMove;
-				} else currentCommandSet.moves[i].moveIndex=-1;
-			}
-			characterIndex=0;
-			while(true) {
-				if(characterIndex>=playerCharacters.Count) break;
-				if(HasMove(characterIndex)) break;
-				characterIndex++;
-			}
-			if(characterIndex>=playerCharacters.Count) {
-				GameController.instance.isPlaying=true;
-				gameObject.SetActive(false);
-				return;
-			}
+			if(lastMoves.ContainsKey(character)) {
+				int lastMove = lastMoves[character];
+				if(character.CanPlayMove(lastMove))
+					currentCommand.moveIndex=lastMove;
+			} else currentCommand.moveIndex=-1;
 
 			gameObject.SetActive(true);
 		}
 
-		public bool HasMove(int characterIndex) {
-			Character target = playerCharacters[characterIndex];
-			if(characterIndex!=characterToControl&&characterToControl>=0) return false;
-			if(!target) return false;
-			return target.HasMove();
-		}
+
+		public bool HasMove() => currentCharacter.HasMove();
 		public bool CanSelectMove(int moveIndex) {
 			if(!currentCharacter) return false;
 			if(!currentCharacter.CanPlayMove(moveIndex)) return false;
@@ -90,36 +62,22 @@ namespace UI {
 			currentCommand.moveIndex=moveIndex;
 			return true;
 		}
-		public bool NextCharacter() {
+		public bool ConfirmMove() {
 			if(currentCharacter!=null) {
 				currentCommand.moveDirection=
 				new Angle(MainCameraController.mouseWorldPosition-currentCharacter.transform.position);
 			}
 
-			while(true) {
-				characterIndex++;
-				if(characterIndex>=playerCharacters.Count) break;
-				if(HasMove(characterIndex)) break;
-			}
+			if(currentCommand.moveIndex<0) return false;
+			if(!currentCharacter.CanPlayMove(currentCommand.moveIndex)) return false;
+			currentCharacter.movePlayer.StartMove(currentCharacter.moveSet,currentCommand.moveIndex,currentCommand.moveDirection);
+			GameController.instance.isPlaying=true;
 
-			if(characterIndex>playerCharacters.Count) {
+			gameObject.SetActive(false);
 
-				if(characterToControl==-1) {
-					GameController.instance.SetCommand(currentCommandSet);
-				} else {
-					CommandModel command = currentCommandSet.moves[characterToControl];
-					if(command.moveIndex<0) return false;
-					Character targetCharacter= playerCharacters[characterToControl];
-					if(!targetCharacter.CanPlayMove(command.moveIndex)) return false;
-					targetCharacter.movePlayer.StartMove(targetCharacter.moveSet,command.moveIndex,command.moveDirection);
-					GameController.instance.isPlaying=true;
-				}
-
-				gameObject.SetActive(false);
-				return true;
-			}
 			return true;
 		}
+		/*
 		public bool PreviousCharacter() {
 			if(characterIndex<=0) return false;
 			int original = characterIndex;
@@ -134,6 +92,7 @@ namespace UI {
 			}
 			return true;
 		}
+		*/
 
 	}
 
