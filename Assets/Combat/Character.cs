@@ -92,7 +92,7 @@ namespace Combat {
 				agileOffset=Mathf.RoundToInt((weight-maxHp)*0.5f);
 			} else agileOffset=0;
 			currentAgile=originAgile-agileOffset-1; //1代表护甲减值
-			originArmor=Mathf.RoundToInt(originAd*0.5f+originAgile*0.5f)+50; //50代表装备护甲
+			originArmor=Mathf.RoundToInt(originAd*0.5f+originAgile*0.5f)+10; //50代表装备护甲
 			currentArmor = originArmor;
 		}
 
