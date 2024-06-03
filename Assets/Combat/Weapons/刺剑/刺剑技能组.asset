@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u523A\u5251\u6280\u80FD\u7EC4"
   m_EditorClassIdentifier: 
   moves:
-  - damageRange: {x: 2, y: 4}
+  - damageRange: {x: 2, y: 20}
     damageType: 1
     relativeKnockback: {x: 5, y: -10}
     moveDuration: 60
@@ -22,7 +22,7 @@ MonoBehaviour:
     previewObject: {fileID: 5868195678650126367, guid: 89fe6565e2cbf424f9c94531c153236d, type: 3}
     moveName: Slash
     moveIcon: {fileID: 0}
-  - damageRange: {x: 2, y: 4}
+  - damageRange: {x: 2, y: 20}
     damageType: 1
     relativeKnockback: {x: 5, y: 0}
     moveDuration: 60
@@ -31,7 +31,7 @@ MonoBehaviour:
     previewObject: {fileID: 3503597111191921281, guid: 13670c4de0290a14386ca69545491536, type: 3}
     moveName: Thrash
     moveIcon: {fileID: 0}
-  - damageRange: {x: 2, y: 4}
+  - damageRange: {x: 2, y: 20}
     damageType: 1
     relativeKnockback: {x: 2, y: 0}
     moveDuration: 60
