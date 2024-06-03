@@ -18,7 +18,7 @@ namespace AI {
 
 			Character target = IntentionGroup.GetTarget(character,hpWeight: 0);
 
-			if(GameController.instance.playerCharacters.Contains(character)) {
+			if(GameController.instance.ContainCharacter(character)) {
 				if(!target||(target.transform.position-transform.position).magnitude>disengageDistance) {
 					GameController.instance.RemoveCharacter(character);
 				}
@@ -31,7 +31,7 @@ namespace AI {
 		}
 
 		private void OnDestroy() {
-			if(GameController.instance.playerCharacters.Contains(character))
+			if(GameController.instance.ContainCharacter(character))
 				GameController.instance.RemoveCharacter(character);
 		}
 

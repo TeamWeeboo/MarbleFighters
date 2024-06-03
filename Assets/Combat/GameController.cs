@@ -30,7 +30,10 @@ namespace Combat {
 		}
 		public void RemoveCharacter(Character character) {
 			playerCharacters.Remove(character);
+			if(nextCharacter>=playerCharacters.Count)
+				nextCharacter=playerCharacters.Count-1;
 		}
+		public bool ContainCharacter(Character character) => playerCharacters.Contains(character);
 
 		int tickPlayed = 9999;
 
