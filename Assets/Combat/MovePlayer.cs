@@ -9,12 +9,14 @@ namespace Combat {
 		Animator animator;
 		DamageDealer damageDealer;
 		new Rigidbody rigidbody;
+		Character character;
 
 		[field: SerializeField] public Transform weaponRoot { get; private set; }
 		[SerializeField] float baseFrictionStrength;
 		[SerializeField] float anim_frictionStrength;
 		[HideInInspector] public bool isOnIce, isOnMud;
 		private float originSpeedChange;
+		[SerializeField] QuadSpriteSetter weaponRenderer;
 
 		public bool anim_damaging;
 		public float anim_acceleration;
@@ -33,10 +35,13 @@ namespace Combat {
 			animator=GetComponent<Animator>();
 			damageDealer=GetComponentInChildren<DamageDealer>();
 			rigidbody=GetComponent<Rigidbody>();
+			character=GetComponent<Character>();
 		}
 
 
 		private void Update() {
+			if(weaponRenderer&&character&&character.moveSet)
+				weaponRenderer.targetSprite=character.moveSet.weaponSprite;
 			//SetWeaponRootDirection(currentDirection);
 		}
 

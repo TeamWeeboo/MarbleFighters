@@ -11,6 +11,11 @@ namespace Combat {
 		[InspectorName("¶¯»­×é")]
 		public AnimatorOverrideController animations;
 
+		public Sprite weaponSprite;
+		public float agGrowth;
+		public float adGrowth;
+		public float apGrowth;
+
 		public const int moveRunIndex = 4;
 		public const int moveHaltIndex = 5;
 	}

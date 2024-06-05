@@ -68,3 +68,7 @@ MonoBehaviour:
     moveName: Halt
     moveIcon: {fileID: 0}
   animations: {fileID: 22100000, guid: 66f4ebf23d8cb034686b43981f70b6db, type: 2}
+  weaponSprite: {fileID: -8043490675137224375, guid: 8d4985892c9e6a442bdccc44c8709182, type: 3}
+  agGrowth: 0
+  adGrowth: 0
+  apGrowth: 0

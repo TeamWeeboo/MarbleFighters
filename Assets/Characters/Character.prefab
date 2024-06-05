@@ -703,6 +703,7 @@ MonoBehaviour:
   <weaponRoot>k__BackingField: {fileID: 1596570986733616880}
   baseFrictionStrength: 0.25
   anim_frictionStrength: 0
+  weaponRenderer: {fileID: 9094999878729698151}
   anim_damaging: 0
   anim_acceleration: 0
   tickAfterMove: 0

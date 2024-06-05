@@ -55,6 +55,7 @@ namespace Combat {
 			if(currentHp<=0) Die();
 			timeAfterHit+=Time.deltaTime;
 		}
+
 		public void AddExp() {
 			currentExp+=9999;
 			levelPoint++;
