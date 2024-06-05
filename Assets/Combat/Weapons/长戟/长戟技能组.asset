@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u957F\u621F\u6280\u80FD\u7EC4"
   m_EditorClassIdentifier: 
   moves:
-  - damageRange: {x: 4, y: 4}
+  - damageRange: {x: 1, y: 20}
     damageType: 0
     relativeKnockback: {x: 0, y: -5}
     moveDuration: 30
@@ -22,7 +22,7 @@ MonoBehaviour:
     previewObject: {fileID: 1399001012718991250, guid: bbba174e3449bb44b9e391e457a55f86, type: 3}
     moveName: Slash
     moveIcon: {fileID: 0}
-  - damageRange: {x: 2, y: 2}
+  - damageRange: {x: 1, y: 20}
     damageType: 1
     relativeKnockback: {x: -5, y: 0}
     moveDuration: 30
@@ -31,7 +31,7 @@ MonoBehaviour:
     previewObject: {fileID: 7991490861591461017, guid: 3bb6095920651f646a008951becefaf0, type: 3}
     moveName: Hook
     moveIcon: {fileID: 0}
-  - damageRange: {x: 2, y: 2}
+  - damageRange: {x: 2, y: 20}
     damageType: 2
     relativeKnockback: {x: 2, y: 0}
     moveDuration: 30
@@ -68,3 +68,7 @@ MonoBehaviour:
     moveName: Halt
     moveIcon: {fileID: 0}
   animations: {fileID: 22100000, guid: a356a6f6be871b84a864fdd3d9d1bc08, type: 2}
+  weaponSprite: {fileID: 0}
+  agGrowth: 0
+  adGrowth: 0
+  apGrowth: 0
