@@ -16,6 +16,8 @@ namespace Combat {
 		[field: SerializeField] public Transform weaponRoot { get; private set; }
 		[SerializeField] float baseFrictionStrength;
 		[SerializeField] float anim_frictionStrength;
+		[HideInInspector] public bool isOnIce, isOnMud;
+		private float originSpeedChange;
 		[SerializeField] QuadSpriteSetter weaponRenderer;
 
 		public bool anim_damaging;
@@ -128,6 +130,14 @@ namespace Combat {
 		void UpdateFriction() {
 			float speedChange = rigidbody.velocity.magnitude*0.1f+0.1f;
 			speedChange*=baseFrictionStrength*(isMoving ? anim_frictionStrength : 1);
+			originSpeedChange = speedChange;
+			if(isOnMud){
+				speedChange *= 1.5f;
+			}else speedChange = originSpeedChange;
+			if(isOnIce){
+				speedChange *= 0.5f;
+			}else speedChange = originSpeedChange;
+
 			rigidbody.velocity=Vector3.MoveTowards(rigidbody.velocity,Vector3.zero,speedChange);
 		}
 
