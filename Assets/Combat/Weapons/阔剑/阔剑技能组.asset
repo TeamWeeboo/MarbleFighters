@@ -61,7 +61,7 @@ MonoBehaviour:
   - damageRange: {x: 0, y: 0}
     damageType: 0
     relativeKnockback: {x: 0, y: 0}
-    moveDuration: 60
+    moveDuration: 120
     maxResetSpeed: 20
     maxInitialSpeed: 100
     previewObject: {fileID: 5014613483715556341, guid: 90610c007ca61314881f5d82601e175c, type: 3}
