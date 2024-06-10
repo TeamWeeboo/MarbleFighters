@@ -26,7 +26,7 @@ public class SpriteToQuad:MonoBehaviour {
 			go.AddComponent<MeshRenderer>().material=quadMaterial;
 			go.GetComponent<MeshRenderer>().sortingOrder=0;
 			go.AddComponent<QuadSpriteSetter>().targetSprite=sprite;
-			go.GetComponent<QuadSpriteSetter>().sortingOrder=order;
+			//go.GetComponent<QuadSpriteSetter>().sortingOrder=order;
 		}
 		done=true;
 	}
