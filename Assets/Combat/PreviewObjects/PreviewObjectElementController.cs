@@ -14,7 +14,6 @@ namespace Combat {
 				mesh.material.color=color;
 			}
 			initPosition=transform.localPosition;
-			Debug.Log(initPosition);
 		}
 		void Update() {
 			transform.localPosition=initPosition;

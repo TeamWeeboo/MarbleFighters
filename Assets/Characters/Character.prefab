@@ -619,6 +619,7 @@ GameObject:
   - component: {fileID: 7544720206810781730}
   - component: {fileID: 3770632523291060399}
   - component: {fileID: 4827833040499315645}
+  - component: {fileID: 5381426596667960603}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -703,9 +704,14 @@ MonoBehaviour:
   <weaponRoot>k__BackingField: {fileID: 1596570986733616880}
   baseFrictionStrength: 0.25
   anim_frictionStrength: 0
+  isOnIce: 0
+  isOnMud: 0
   weaponRenderer: {fileID: 9094999878729698151}
   anim_damaging: 0
   anim_acceleration: 0
+  anim_blocking: 0
+  anim_blockStrength: 0
+  anim_retaliateIndex: -1
   tickAfterMove: 0
 --- !u!114 &9062713177368443699
 MonoBehaviour:
@@ -815,6 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13c8bc54a0a23d4a82b6486acb17004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noScale: 0
 --- !u!114 &7544720206810781730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,6 +865,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e4b30e56187034fae71e5cb53daaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5381426596667960603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551373184580047814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc97dc531983f9046ac7fd86a41f3824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engageDistance: 1e+28
+  disengageDistance: 1e+28
+  donotEngage: 1
 --- !u!1 &2784770164332930731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1359,7 @@ MonoBehaviour:
   damageType: 0
   relativeKnockback: {x: 0, y: 0}
   character: {fileID: 0}
+  friendlyFire: 0
 --- !u!114 &2199823198144817660
 MonoBehaviour:
   m_ObjectHideFlags: 0
