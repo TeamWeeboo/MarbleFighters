@@ -96,7 +96,7 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: "\u9EC4\u91D1\u7130\u5F62\u5DE8\u5251"
     originalName: 
-    pivot: {x: 0.5000001, y: 0.8698031}
+    pivot: {x: 0.5000001, y: 0.15518369}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
