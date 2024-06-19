@@ -1,3 +1,4 @@
+using AI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Combat {
 		public Vector2 relativeKnockback;
 		public Angle direction;
 		public Character character;
-
+		[SerializeField] bool friendlyFire;
 
 
 		void Start() {
@@ -32,6 +33,11 @@ namespace Combat {
 			for(var t = transform;t!=null;t=t.parent)
 				if(collision.transform==t) return;
 			DamageTarget target = collision.GetComponent<DamageTarget>();
+
+			if(target.GetComponentInParent<Character>()&&!friendlyFire) {
+				if(FactionUtils.GetRelation(target.GetComponentInParent<Character>().faction,character.faction)>0) return;
+			}
+
 			if(!target) return;
 			if(lastDamageTimes.ContainsKey(target)&&Time.time-lastDamageTimes[target]<damageInterval) return;
 			lastDamageTimes[target]=Time.time;
@@ -51,6 +57,7 @@ namespace Combat {
 			result.damageRange=damageRange;
 			result.damageType=damageType;
 			result.knockback=Utility.Product(relativeKnockback,direction.vector);
+			result.source=this;
 			return result;
 		}
 	}

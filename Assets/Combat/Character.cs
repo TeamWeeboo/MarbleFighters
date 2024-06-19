@@ -14,16 +14,16 @@ namespace Combat {
 		public int playerLevel;
 		public int maxLevel;
 		public int currentLevel;
-		[HideInInspector]public int[] nextLevelExp;
+		[HideInInspector] public int[] nextLevelExp;
 		public int currentExp;
 		public int currentHp, maxHp;
-		[HideInInspector]public int currentAd, originAd, currentAp, originAp, currentAgile, originAgile;
+		[HideInInspector] public int currentAd, originAd, currentAp, originAp, currentAgile, originAgile;
 		public int currentArmor, originArmor;
-		[HideInInspector]public int weight, agileOffset;
-		[HideInInspector]public int levelPoint;
-		[HideInInspector]public int mainProperty; //所持武器代表属性
+		[HideInInspector] public int weight, agileOffset;
+		[HideInInspector] public int levelPoint;
+		[HideInInspector] public int mainProperty; //所持武器代表属性
 		public int baseAd, baseAp, baseAgile; //用于调整基础属性
-		[HideInInspector]public int atkAd, atkAgile, atkAp;
+		[HideInInspector] public int atkAd, atkAgile, atkAp;
 
 		public CharacterDecision decision;
 		public float timeAfterHit { get; private set; }
@@ -38,11 +38,11 @@ namespace Combat {
 			rigidbody=GetComponent<Rigidbody>();
 			movePlayer=GetComponent<MovePlayer>();
 			damageTarget=GetComponent<DamageTarget>();
-			GetComponent<DamageTarget>().damaging+=Damage;
+			GetComponent<DamageTarget>().damaging.Add(0,Damage);
 
-			originAd = baseAd;
-			originAgile = baseAgile;
-			originAp = baseAp;
+			originAd=baseAd;
+			originAgile=baseAgile;
+			originAp=baseAp;
 			RefreshProperties();
 			nextLevelExp=new int[maxLevel];
 			nextLevelExp[0]=1000;
@@ -70,21 +70,21 @@ namespace Combat {
 			if(currentExp>nextLevelExp[playerLevel-1]&&playerLevel<maxLevel) {
 				LevelUp();
 			}
-			
+
 		}
-		public void AdUp(){
+		public void AdUp() {
 			originAd++;
 			RefreshProperties();
 		}
-		public void ApUp(){
+		public void ApUp() {
 			originAp++;
 			RefreshProperties();
 		}
-		public void AgileUp(){
+		public void AgileUp() {
 			originAgile++;
 			RefreshProperties();
 		}
-		void RefreshProperties(){
+		void RefreshProperties() {
 			currentAd=originAd;
 			currentAp=originAp;
 			maxHp=originAd*5;
@@ -94,7 +94,7 @@ namespace Combat {
 			} else agileOffset=0;
 			currentAgile=originAgile-agileOffset-1; //1代表护甲减值
 			originArmor=Mathf.RoundToInt(originAd*0.5f+originAgile*0.5f)+10; //50代表装备护甲
-			currentArmor = originArmor;
+			currentArmor=originArmor;
 		}
 
 		public virtual void Die() {
@@ -135,23 +135,23 @@ namespace Combat {
 				currentHp-=Random.Range(damage.damageRange.x,damage.damageRange.y+1);
 				Vector3 knockback3 = new Vector3(damage.knockback.x,0,damage.knockback.y);
 				rigidbody.AddForce(knockback3,ForceMode.Impulse);
-				Debug.Log("Hp" + currentHp);
-				Debug.Log("Armor" + currentArmor);
-				
+				Debug.Log("Hp"+currentHp);
+				Debug.Log("Armor"+currentArmor);
+
 
 			} else {
 				damageTarget.damageSuccess=true;
-				if(currentArmor >0){
+				if(currentArmor>0) {
 					currentArmor-=Random.Range(damage.damageRange.x,damage.damageRange.y+1);
-					Debug.Log("Hp" + currentHp);
-					Debug.Log("Armor" + currentArmor);
+					Debug.Log("Hp"+currentHp);
+					Debug.Log("Armor"+currentArmor);
 				}
-				if(currentArmor <= 0){
+				if(currentArmor<=0) {
 					currentArmor-=Random.Range(damage.damageRange.x,damage.damageRange.y+1);
-					Debug.Log("Hp" + currentHp);
-					Debug.Log("Armor" + currentArmor);
+					Debug.Log("Hp"+currentHp);
+					Debug.Log("Armor"+currentArmor);
 				}
-				
+
 			}
 
 

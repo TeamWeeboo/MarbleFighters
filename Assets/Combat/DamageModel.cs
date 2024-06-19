@@ -15,6 +15,9 @@ namespace Combat {
 		public DamageType damageType;
 		public Vector2Int damageRange;
 		public Vector2 knockback;
+
+		public DamageDealer source;
+
 		public object Clone() {
 			DamageModel result = new DamageModel();
 			result.damageType=damageType;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Combat {
@@ -10,6 +11,7 @@ namespace Combat {
 		DamageDealer damageDealer;
 		new Rigidbody rigidbody;
 		Character character;
+		DamageTarget damageTarget;
 
 		[field: SerializeField] public Transform weaponRoot { get; private set; }
 		[SerializeField] float baseFrictionStrength;
@@ -20,6 +22,10 @@ namespace Combat {
 
 		public bool anim_damaging;
 		public float anim_acceleration;
+
+		public bool anim_blocking;
+		public float anim_blockStrength;
+		public int anim_retaliateIndex=-1;
 
 		MoveSetInfo currentMoveSet;
 		MoveInfo currentMove;
@@ -36,6 +42,7 @@ namespace Combat {
 			damageDealer=GetComponentInChildren<DamageDealer>();
 			rigidbody=GetComponent<Rigidbody>();
 			character=GetComponent<Character>();
+			damageTarget=GetComponent<DamageTarget>();
 		}
 
 
@@ -48,6 +55,24 @@ namespace Combat {
 		private void FixedUpdate() {
 			UpdateMove();
 			UpdateFriction();
+			UpdateBlock();
+		}
+
+		void UpdateBlock() {
+			if(anim_blocking) damageTarget.damaging.Add(-1,OnBlock);
+			else damageTarget.damaging.Remove(-1,OnBlock);
+		}
+		void OnBlock(DamageModel damage) {
+			damage.knockback=Vector2.zero;
+			damage.damageRange.x-=(int)(damage.damageRange.x*anim_blockStrength);
+			damage.damageRange.y-=(int)(damage.damageRange.y*anim_blockStrength);
+			Transform source = damage.source.transform;
+			if(source.GetComponentInParent<Character>()) source=source.GetComponentInParent<Character>().transform;
+			else if(source.GetComponentInParent<MovePlayer>()) source=source.GetComponentInParent<Character>().transform;
+			Vector3 directon = source.position-transform.position;
+			Debug.Log($"{source.position} , {transform.position} , {directon} , {new Angle(directon).degree}");
+			//GameController.instance.isPlaying= false;	
+			if(anim_retaliateIndex>=0) StartMove(character.moveSet,anim_retaliateIndex,new Angle(directon));
 		}
 
 		public void StartMove(MoveSetInfo moveset,int moveIndex,Angle direction) {
