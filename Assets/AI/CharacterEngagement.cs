@@ -8,6 +8,7 @@ namespace AI {
 
 		public float engageDistance;
 		public float disengageDistance;
+		public bool donotEngage;
 		Character character;
 
 		private void Start() {
@@ -15,7 +16,7 @@ namespace AI {
 		}
 
 		private void FixedUpdate() {
-
+			if(donotEngage) return;
 			Character target = IntentionGroup.GetTarget(character,hpWeight: 0);
 
 			if(GameController.instance.ContainCharacter(character)) {

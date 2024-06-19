@@ -56,6 +56,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5381426596667960603, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
+      propertyPath: donotEngage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381426596667960603, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
+      propertyPath: engageDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381426596667960603, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
+      propertyPath: disengageDistance
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4827833040499315645, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
     m_RemovedGameObjects: []
@@ -67,9 +79,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2551373184580047814, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6453903418154056554}
-    - targetCorrespondingSourceObject: {fileID: 2551373184580047814, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 727431846706648857}
   m_SourcePrefab: {fileID: 100100000, guid: f27874850a1238c4ca1f5031c5b505a9, type: 3}
 --- !u!1 &6919429532615660414 stripped
 GameObject:
@@ -104,17 +113,3 @@ MonoBehaviour:
   movePlayer: {fileID: 0}
   decision: {fileID: 0}
   intentionGroupTypeName: 
---- !u!114 &727431846706648857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6919429532615660414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc97dc531983f9046ac7fd86a41f3824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  engageDistance: 30
-  disengageDistance: 60

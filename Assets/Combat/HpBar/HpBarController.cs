@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ namespace Combat {
 		Image overlayWhite;
 		Image overlayArmor;
 		Image overlayArmorWhite;
+		TextMeshProUGUI nameText;
 
 		[SerializeField]
 		float whiteRetractDelay = 0.1f;
@@ -39,10 +41,12 @@ namespace Combat {
 				if(i.name=="HealthBarOverlayArmor") overlayArmor=i;
 				if(i.name=="HealthBarOverlayArmorWhite") overlayArmorWhite=i;
 			}
+			nameText=GetComponentInChildren<TextMeshProUGUI>();
 		}
 
 		void UpdateValue() {
 			if(!source) return;
+			nameText.text=source.gameObject.name;
 			ratioRed=(float)source.currentHp/source.maxHp;
 			ratioArmor=(float)source.currentArmor/source.originArmor;
 			if(ratioWhite>ratioRed&&source.timeAfterHit>whiteRetractDelay)

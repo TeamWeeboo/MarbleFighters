@@ -9,7 +9,7 @@ namespace Combat {
 		public Color color;
 		public Material material;
 		void Start() {
-			if(TryGetComponent(out MeshRenderer mesh)) {
+			if(transform.childCount>0&&transform.GetChild(0).TryGetComponent(out MeshRenderer mesh)) {
 				mesh.material=material;
 				mesh.material.color=color;
 			}
