@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 namespace Combat{
-    public class UIScript : MonoBehaviour
+    public class StartUI : MonoBehaviour
 {
     public GameObject setting;
     public Character character;
