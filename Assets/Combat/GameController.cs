@@ -15,8 +15,8 @@ namespace Combat {
 		[SerializeField] int tickPerRound;
 		[SerializeField] bool traditionalTurnBased;
 		[SerializeReference] bool noPause;
-        public delegate void WeaponIconChangeHandler();
-        public event WeaponIconChangeHandler OnWeaponIconChange;
+        public delegate void EnterNextRound();
+        public event EnterNextRound OnEnterNextRound;
         public List<Character> playerCharacters;
 
 		public void AddCharacter(Character character) {
@@ -76,15 +76,18 @@ namespace Combat {
 		}
 
 		public int nextCharacter;
+		public int Round;
 		void EnterCommandMode() {
 			playerCharacters[nextCharacter].decision.PlayDecision();
             Debug.Log(playerCharacters.Count);
 			for(int _ = 0;_<playerCharacters.Count;_++) {
 				nextCharacter=(nextCharacter+1)%playerCharacters.Count;
-				if(playerCharacters.Count>0) {
-					if(nextCharacter==1) playerCharacters.Sort((a,b) => b.currentAgile.CompareTo(a.currentAgile));//当当前角色为列表第一时，重新排序
+				
+				if(playerCharacters[nextCharacter] != null) {
+					if(nextCharacter==1) playerCharacters.Sort((a,b) => b.currentAgile.CompareTo(a.currentAgile));//进入下个回合时当nextcharacter为列表第二时，重新排序
 				}
-                OnWeaponIconChange?.Invoke();
+				Round++;    //不知道怎么判断战斗结束，所以Round归1并没有做
+                OnEnterNextRound?.Invoke();
                 if (playerCharacters[nextCharacter]) break;
 			}
 

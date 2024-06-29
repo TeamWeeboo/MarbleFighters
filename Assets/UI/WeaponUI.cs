@@ -12,7 +12,7 @@ public class WeaponUI : MonoBehaviour
     void Start()
     {
         weaponImage = GetComponent<Image>();
-        GameController.instance.OnWeaponIconChange += ChangeWeaponIcon;
+        GameController.instance.OnEnterNextRound += ChangeWeaponIcon;
     }
     public void ChangeWeaponIcon()
     {

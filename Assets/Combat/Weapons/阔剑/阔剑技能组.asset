@@ -21,7 +21,7 @@ MonoBehaviour:
     maxInitialSpeed: 20
     previewObject: {fileID: 2104948460408712034, guid: e6e7642b2960cc8428dd83596342e81d, type: 3}
     moveName: Slash
-    moveIcon: {fileID: 21300000, guid: 0f48c6a6020c0c848af14c557153485f, type: 3}
+    moveIcon: {fileID: 21300000, guid: 40158eb9883b2114099a8d89a9c7ce71, type: 3}
   - damageRange: {x: 2, y: 20}
     damageType: 1
     relativeKnockback: {x: 5, y: 0}
@@ -30,7 +30,7 @@ MonoBehaviour:
     maxInitialSpeed: 60
     previewObject: {fileID: 7447318540876951270, guid: 80f471ba6066831499f24b7c33828864, type: 3}
     moveName: Thrash
-    moveIcon: {fileID: 21300000, guid: 40158eb9883b2114099a8d89a9c7ce71, type: 3}
+    moveIcon: {fileID: 21300000, guid: 0f48c6a6020c0c848af14c557153485f, type: 3}
   - damageRange: {x: 2, y: 20}
     damageType: 2
     relativeKnockback: {x: 2, y: 0}
@@ -39,7 +39,7 @@ MonoBehaviour:
     maxInitialSpeed: 30
     previewObject: {fileID: 3328345292083086518, guid: 2f968cb2ae0e110439b93884b2981912, type: 3}
     moveName: Pommel Strike
-    moveIcon: {fileID: 21300000, guid: b949c1934ab22a04cb4d18d440e73776, type: 3}
+    moveIcon: {fileID: 21300000, guid: f800210d6640ec44ba75e8319aafbf9a, type: 3}
   - damageRange: {x: 0, y: 0}
     damageType: 0
     relativeKnockback: {x: 0, y: 0}
