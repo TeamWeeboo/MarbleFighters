@@ -15,7 +15,9 @@ namespace Combat {
 		[SerializeField] int tickPerRound;
 		[SerializeField] bool traditionalTurnBased;
 		[SerializeReference] bool noPause;
-		public List<Character> playerCharacters;
+        public delegate void WeaponIconChangeHandler();
+        public event WeaponIconChangeHandler OnWeaponIconChange;
+        public List<Character> playerCharacters;
 
 		public void AddCharacter(Character character) {
 			if(nextCharacter==1) {
@@ -76,14 +78,14 @@ namespace Combat {
 		public int nextCharacter;
 		void EnterCommandMode() {
 			playerCharacters[nextCharacter].decision.PlayDecision();
-
-			Debug.Log(playerCharacters.Count);
+            Debug.Log(playerCharacters.Count);
 			for(int _ = 0;_<playerCharacters.Count;_++) {
 				nextCharacter=(nextCharacter+1)%playerCharacters.Count;
 				if(playerCharacters.Count>0) {
 					if(nextCharacter==1) playerCharacters.Sort((a,b) => b.currentAgile.CompareTo(a.currentAgile));//当当前角色为列表第一时，重新排序
 				}
-				if(playerCharacters[nextCharacter]) break;
+                OnWeaponIconChange?.Invoke();
+                if (playerCharacters[nextCharacter]) break;
 			}
 
 		}

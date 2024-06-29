@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AI;
+using UnityEngine.UI;
 
 namespace Combat {
 	public class Character:MonoBehaviour {
 
 		public Factions faction;
-
 		public string playerName;
 		public bool isNPC;
 		public string description;
@@ -24,6 +24,7 @@ namespace Combat {
 		[HideInInspector] public int mainProperty; //所持武器代表属性
 		public int baseAd, baseAp, baseAgile; //用于调整基础属性
 		[HideInInspector] public int atkAd, atkAgile, atkAp;
+        [SerializeField] Sprite characterIcon;
 
 		public CharacterDecision decision;
 		public float timeAfterHit { get; private set; }
@@ -54,6 +55,10 @@ namespace Combat {
 		private void FixedUpdate() {
 			if(currentHp<=0) Die();
 			timeAfterHit+=Time.deltaTime;
+		}
+		public Sprite GetSprite()
+		{
+			return characterIcon;
 		}
 
 		public void AddExp() {
