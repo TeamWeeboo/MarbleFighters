@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f6b6bbe93905d4aabfe08f3c544efa, type: 3}
+  m_Name: DefaultFront 1
+  m_EditorClassIdentifier: 
+  relations: c99f1eba87a7131b82d86aa0ee4ade68fa66869c8bb3e7f5433f913ff563bbe3af266de15ad2015e09d256d14077b5ca41d853b4155bf77f82e0861ce538d021
+  sprites:
+  - {fileID: -3022302686584744168, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: 6035817915183452055, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: -5272729349041135217, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: -8997253256782205953, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: 8500062483328708683, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: -8043490675137224375, guid: 8d4985892c9e6a442bdccc44c8709182, type: 3}
+  - {fileID: -7388488346749530529, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: -8344813479071147409, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: 0}
+  - {fileID: -1968097995896586623, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: 5268712546129739941, guid: aaf72ac18ec860f4eb58dbf15d0cf692, type: 3}
+  - {fileID: -1756816209248959596, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: -1607212938150624418, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: -264598475147871863, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: -2129044462288960708, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  - {fileID: 3974489872954600505, guid: 73eccacd462a00246af0e3401f9d955b, type: 3}
+  positions:
+  - {x: 1.07, y: 9.37, z: 0}
+  - {x: 2.0024428, y: -2.0811138, z: -0.0060000005}
+  - {x: 0.48, y: -1.6990001, z: -0.0009999997}
+  - {x: -1.27, y: -1.4239999, z: -0.0060000005}
+  - {x: -2.09, y: -0.239, z: -0.0009999997}
+  - {x: -1.4, y: 0.30399996, z: 0.006}
+  - {x: -15.771786, y: -1.0217965, z: 0}
+  - {x: 0.64, y: 2.592, z: -0.002}
+  - {x: -0.83, y: 2.571, z: -0.0010000003}
+  - {x: -0.3, y: 5.0720005, z: -0.0020000003}
+  - {x: 13.650387, y: 1.6750561, z: 0}
+  - {x: -0.42, y: 0.36299998, z: 0.001}
+  - {x: 0.23, y: -1.783, z: 0.002998508}
+  - {x: 1.25, y: -4.3580003, z: -0.0019999994}
+  - {x: -0.8, y: -1.6650007, z: 0.0050025815}
+  - {x: -0.9, y: -4.89, z: -0.0010000002}
+  depths: ffffffff0500000006000000050000000600000000000000f6ffffff01000000020000000300000001000000fefffffffbfffffffdfffffff9fffffffaffffff
